@@ -3,23 +3,33 @@ import React, { useState } from 'react';
 import { IoLogoTwitter } from "react-icons/io";
 import { FaLinkedin, FaDiscord, FaBars, FaTimes } from "react-icons/fa";
 import { RiArrowDropDownLine } from "react-icons/ri";
-
+import Image from 'next/image';
+import Link from 'next/link';
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [aboutOpen, setAboutOpen] = useState(false); // mobile dropdown
 
     return (
-        <div className="bg-black text-gray-400 w-full border-t-4 border-gray-600">
-            <nav className="flex items-center justify-between px-6 py-9 md:justify-center relative">
+        <div className="bg-black text-gray-400 w-full  ">
+            <nav className="flex items-center justify-between px-6 py-5 md:justify-center relative">
                 {/* Mobile Logo */}
-                <div className="text-xl font-bold md:hidden text-white">LOGO</div>
+                <div className="text-xl font-bold md:hidden text-white">
+                    <Link href={'/'}>
+                        <Image src='/Assets/logo.png' alt='logo' width={100} height={100} />
+                    </Link>
+                </div>
 
                 {/* Desktop Nav */}
                 <ul className="hidden md:flex space-x-6 text-base items-center justify-center relative">
-                    <li className="text-lg font-bold transform transition-transform duration-200 hover:scale-110 hover:text-white">LOGO</li>
+                    <li className="text-lg font-bold transform transition-transform duration-200 hover:scale-110 hover:text-white">
+                        <Link href={'/'}>
+                            <Image src='/Assets/logo.png' alt='logo' width={100} height={100} />
+                        </Link>
+                    </li>
                     <li className='transform transition-transform duration-200 hover:scale-110'><a className="transform transition-transform duration-200 hover:scale-110 hover:text-white" href="#">Courses</a></li>
-                    <li className='transform transition-transform duration-200 hover:scale-110'><a className="transform transition-transform duration-200 hover:scale-110 hover:text-white" href="#">Bootcamps</a></li>
-                    <li className='transform transition-transform duration-200 hover:scale-110'><a className="transform transition-transform duration-200 hover:scale-110 hover:text-white" href="#">Certifications</a></li>
+                    <li className='transform transition-transform duration-200 hover:scale-110'><a className="transform transition-transform duration-200 hover:scale-110 hover:text-white" href="/bootcamps">Bootcamps</a></li>
+                    <a className="transform transition-transform duration-200 hover:scale-110 hover:text-white" href="/certifications">Certifications</a>
+
                     <li className='transform transition-transform duration-200 hover:scale-110'><a className="transform transition-transform duration-200 hover:scale-110 hover:text-white" href="#">Trainings</a></li>
                     <li className='transform transition-transform duration-200 hover:scale-110'><a className="transform transition-transform duration-200 hover:scale-110 hover:text-white" href="#">Blog</a></li>
                     <li className='transform transition-transform duration-200 hover:scale-110'><a className="transform transition-transform duration-200 hover:scale-110 hover:text-white" href="#">Resources</a></li>
@@ -37,7 +47,7 @@ const Navbar = () => {
                         </ul>
                     </li>
 
-                    <li className='transform transition-transform duration-200 hover:scale-110'><a className="transform transition-transform duration-200 hover:scale-110 hover:text-white" href="#">Contact Us</a></li>
+                    <li className='transform transition-transform duration-200 hover:scale-110'><a className="transform transition-transform duration-200 hover:scale-110 hover:text-white" href="/contact">Contact Us</a></li>
 
                     {/* Social Icons */}
                     <li className="bg-white rounded-full p-1 transition duration-200 hover:bg-black">
@@ -63,8 +73,8 @@ const Navbar = () => {
                 {isOpen && (
                     <div className="absolute top-full left-0 w-full bg-black flex flex-col items-center space-y-4 py-6 md:hidden z-10 border-t border-gray-700">
                         <a className="transform transition-transform duration-200 hover:scale-110 hover:text-white" href="#">Courses</a>
-                        <a className="transform transition-transform duration-200 hover:scale-110 hover:text-white" href="#">Bootcamps</a>
-                        <a className="transform transition-transform duration-200 hover:scale-110 hover:text-white" href="#">Certifications</a>
+                        <a className="transform transition-transform duration-200 hover:scale-110 hover:text-white" href="/bootcamps">Bootcamps</a>
+                        <a className="transform transition-transform duration-200 hover:scale-110 hover:text-white" href="/certifications">Certifications</a>
                         <a className="transform transition-transform duration-200 hover:scale-110 hover:text-white" href="#">Trainings</a>
                         <a className="transform transition-transform duration-200 hover:scale-110 hover:text-white" href="#">Blog</a>
                         <a className="transform transition-transform duration-200 hover:scale-110 hover:text-white" href="#">Resources</a>
@@ -87,7 +97,7 @@ const Navbar = () => {
                             )}
                         </div>
 
-                        <a className="transform transition-transform duration-200 hover:scale-110 hover:text-white" href="#">Contact Us</a>
+                        <a className="transform transition-transform duration-200 hover:scale-110 hover:text-white" href="/contact">Contact Us</a>
 
                         <div className="flex space-x-4 text-lg">
                             <a className="bg-white rounded-full p-2 text-black hover:text-white hover:bg-black transition" href="#"><IoLogoTwitter /></a>

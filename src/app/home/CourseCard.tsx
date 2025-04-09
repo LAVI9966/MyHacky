@@ -1,6 +1,6 @@
 'use client'
-import React, { useState } from "react";
 import Image from "next/image";
+import { useState } from "react";
 // courseData.ts
 type Course = {
     id: number;
@@ -23,7 +23,7 @@ const courseData: Course[] = [
   Elastic EDR, Sysmon, weaponizing kernel exploits for defense evasion and bypassing security controls like
   Protected Processes (PP), Process Protection Light (PPL), Digital Signature Enforcement (DSE), Attack Surface
   Reduction (ASR) rules and incapacitating Event Tracing for Windows (ETW) telemetry and a lot more.`,
-        image: "/Assets/gcb.avif",
+        image: "/Assets/Diagram-01.avif",
         accessOptions: [
             "120 Days - ₹499.00",
             "180 Days - ₹699.00",
@@ -36,7 +36,7 @@ const courseData: Course[] = [
         title: "CRTP : Attacking and Defending Active Directory Lab",
         accessInfo: "",
         description: `This lab is designed to provide a platform for security professionals to understand, analyze and practice threats and attacks in a modern Active Directory environment. The lab is beginner friendly and comes with multiple learning aids that include video course, slides and multiple lab manuals.`,
-        image: "/Assets/gcb.avif",
+        image: "/Assets/activedirectorylab.avif",
         accessOptions: [
             " 120 Days - ₹499.OO",
             "30 Days - Lab Extension - ₹199.00",
@@ -50,7 +50,7 @@ const courseData: Course[] = [
         title: "CRTE : Windows Red Team Lab",
         accessInfo: "",
         description: `This lab requires you to start with a non-admin user account in the domain and work your way up to enterprise admin in a true multi-forest environment. The focus is on abusing features and functionality and not on exploiting vulnerabilities. This lab is for intermediate/advanced users and comes with multiple learning aids like video course, slides, video walk-through and lab manuals.`,
-        image: "/Assets/gcb.avif",
+        image: "/Assets/ads-removebg.avif",
         accessOptions: [
             " 120 Days - ₹499.OO",
             "30 Days - Lab Extension - ₹199.00",
@@ -70,7 +70,7 @@ Starts: 8th March 2025
 Duration: 4 weeks
 
 Recordings of live sessions included!`,
-        image: "/Assets/gcb.avif",
+        image: "/Assets/CRTE-Advance.avif",
         accessOptions: [
             " 120 Days - ₹499.OO",
             "30 Days - Lab Extension - ₹199.00",
@@ -96,12 +96,16 @@ Recordings of live sessions included!`,
 ];
 
 const CourseCard = () => {
+
     return (
-        <section className="px-4 md:px-6 lg:px-8 py-10 bg-white text-[#0e0e32]">
-            {courseData.map((course) => (
-                <SingleCourseCard key={course.id} course={course} />
-            ))}
-        </section>
+        <>
+            <section className="px-4 md:px-6 lg:px-8 py-10 bg-white text-[#0e0e32]">
+
+                {courseData.map((course) => (
+                    <SingleCourseCard key={course.id} course={course} />
+                ))}
+            </section>
+        </>
     );
 };
 
