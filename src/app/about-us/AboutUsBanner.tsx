@@ -7,7 +7,7 @@ const AboutUsBanner = () => {
         <div className="relative w-full h-[400px] overflow-hidden rounded-xl">
             {/* Background Image */}
             <Image
-                src="/Assets/bootcamp.avif"
+                src="/Assets/aboutus.jpg"
                 alt="Background"
                 fill
                 className="object-cover brightness-30"
@@ -23,7 +23,7 @@ const AboutUsBanner = () => {
                     transition={{ duration: 0.9, ease: "easeOut" }}
                     className="text-[#0EC9AC] text-5xl font-bold mb-4"
                 >
-                    Pick from our live Bootcamps
+                    About Us
                 </motion.h1>
 
                 {/* Description animates from bottom to top */}
@@ -33,7 +33,7 @@ const AboutUsBanner = () => {
                     transition={{ duration: 0.9, ease: "easeOut", delay: 0.3 }}
                     className="text-gray-200 text-lg w-[90%] px-10"
                 >
-                    Our popular bootcamps run for 4 weeks and provide instructor-led training and hands-on labs where you can learn with fellow students from the comfort of your home.
+                    Hacky Security is a rapidly growing Information Security Services organization focused on providing top-notch training and security services. We build intellectual capital with customers around the world.
                 </motion.p>
             </div>
         </div>

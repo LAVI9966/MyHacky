@@ -10,12 +10,12 @@ const Navbar = () => {
     const [aboutOpen, setAboutOpen] = useState(false); // mobile dropdown
 
     return (
-        <div className="bg-black text-gray-400 w-full  ">
-            <nav className="flex items-center justify-between px-6 py-5 md:justify-center relative">
+        <div className="bg-black text-gray-400 w-full z-15 ">
+            <nav className="flex items-center justify-between px-6  md:justify-center relative">
                 {/* Mobile Logo */}
                 <div className="text-xl font-bold md:hidden text-white">
                     <Link href={'/'}>
-                        <Image src='/Assets/logo.png' alt='logo' width={100} height={100} />
+                        <Image src='/Assets/logo.png' alt='logo' width={90} height={90} />
                     </Link>
                 </div>
 
@@ -26,7 +26,7 @@ const Navbar = () => {
                             <Image src='/Assets/logo.png' alt='logo' width={100} height={100} />
                         </Link>
                     </li>
-                    <li className='transform transition-transform duration-200 hover:scale-110'><a className="transform transition-transform duration-200 hover:scale-110 hover:text-white" href="#">Courses</a></li>
+                    <li className='transform transition-transform duration-200 hover:scale-110'><a className="transform transition-transform duration-200 hover:scale-110 hover:text-white" href="/home">Courses</a></li>
                     <li className='transform transition-transform duration-200 hover:scale-110'><a className="transform transition-transform duration-200 hover:scale-110 hover:text-white" href="/bootcamps">Bootcamps</a></li>
                     <a className="transform transition-transform duration-200 hover:scale-110 hover:text-white" href="/certifications">Certifications</a>
 
@@ -37,13 +37,13 @@ const Navbar = () => {
 
                     {/* About with dropdown */}
                     <li className="relative group transform transition-transform duration-200 hover:scale-110">
-                        <div className="flex items-center cursor-pointer text-gray-400 hover:text-white transition">
-                            <span>About</span>
+                        <div className="flex items-center cursor-pointer z-15 text-gray-400 hover:text-white transition">
+                            <a href="/about-us" className="block px-4 py-2 ">About</a>
                             <RiArrowDropDownLine size={25} />
                         </div>
-                        <ul className="absolute top-full left-0 mt-2 w-40 bg-gray-900 rounded shadow-md opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-all duration-300 z-10">
-                            <li><a href="#" className="block px-4 py-2 hover:bg-gray-700 border-t-4 border-blue-400">Careers</a></li>
-                            <li><a href="#" className="block px-4 py-2 hover:bg-gray-700">News</a></li>
+                        <ul className="absolute top-full left-0 mt-2 w-40 bg-gray-900 rounded shadow-md opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-all duration-300 z-[999]">
+                            <li><a href="/about-us/careers" className="block px-4 py-2 hover:bg-gray-700 border-t-4 border-blue-400">Careers</a></li>
+                            <li><a href="/about-us/news" className="block px-4 py-2 hover:bg-gray-700">News</a></li>
                         </ul>
                     </li>
 
@@ -72,7 +72,7 @@ const Navbar = () => {
                 {/* Mobile Menu */}
                 {isOpen && (
                     <div className="absolute top-full left-0 w-full bg-black flex flex-col items-center space-y-4 py-6 md:hidden z-10 border-t border-gray-700">
-                        <a className="transform transition-transform duration-200 hover:scale-110 hover:text-white" href="#">Courses</a>
+                        <a className="transform transition-transform duration-200 hover:scale-110 hover:text-white" href="/home">Courses</a>
                         <a className="transform transition-transform duration-200 hover:scale-110 hover:text-white" href="/bootcamps">Bootcamps</a>
                         <a className="transform transition-transform duration-200 hover:scale-110 hover:text-white" href="/certifications">Certifications</a>
                         <a className="transform transition-transform duration-200 hover:scale-110 hover:text-white" href="#">Trainings</a>
