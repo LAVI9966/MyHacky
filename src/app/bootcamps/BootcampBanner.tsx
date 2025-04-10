@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 const BootcampBanner = () => {
     return (
-        <div className="relative w-full h-[400px] overflow-hidden rounded-xl">
+        <div className="relative w-full h-[400px] overflow-hidden ">
             {/* Background Image */}
             <Image
                 src="/Assets/bootcamp.avif"

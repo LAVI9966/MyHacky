@@ -30,10 +30,10 @@ const Navbar = () => {
                     <li className='transform transition-transform duration-200 hover:scale-110'><a className="transform transition-transform duration-200 hover:scale-110 hover:text-white" href="/bootcamps">Bootcamps</a></li>
                     <a className="transform transition-transform duration-200 hover:scale-110 hover:text-white" href="/certifications">Certifications</a>
 
-                    <li className='transform transition-transform duration-200 hover:scale-110'><a className="transform transition-transform duration-200 hover:scale-110 hover:text-white" href="#">Trainings</a></li>
+                    <li className='transform transition-transform duration-200 hover:scale-110'><a className="transform transition-transform duration-200 hover:scale-110 hover:text-white" href="/trainings">Trainings</a></li>
                     <li className='transform transition-transform duration-200 hover:scale-110'><a className="transform transition-transform duration-200 hover:scale-110 hover:text-white" href="#">Blog</a></li>
-                    <li className='transform transition-transform duration-200 hover:scale-110'><a className="transform transition-transform duration-200 hover:scale-110 hover:text-white" href="#">Resources</a></li>
-                    <li className='transform transition-transform duration-200 hover:scale-110'><a className="transform transition-transform duration-200 hover:scale-110 hover:text-white" href="#">Testimonials</a></li>
+                    <li className='transform transition-transform duration-200 hover:scale-110'><a className="transform transition-transform duration-200 hover:scale-110 hover:text-white" href="/resources">Resources</a></li>
+                    <li className='transform transition-transform duration-200 hover:scale-110'><a className="transform transition-transform duration-200 hover:scale-110 hover:text-white" href="/testimonials">Testimonials</a></li>
 
                     {/* About with dropdown */}
                     <li className="relative group transform transition-transform duration-200 hover:scale-110">
@@ -75,10 +75,10 @@ const Navbar = () => {
                         <a className="transform transition-transform duration-200 hover:scale-110 hover:text-white" href="/home">Courses</a>
                         <a className="transform transition-transform duration-200 hover:scale-110 hover:text-white" href="/bootcamps">Bootcamps</a>
                         <a className="transform transition-transform duration-200 hover:scale-110 hover:text-white" href="/certifications">Certifications</a>
-                        <a className="transform transition-transform duration-200 hover:scale-110 hover:text-white" href="#">Trainings</a>
+                        <a className="transform transition-transform duration-200 hover:scale-110 hover:text-white" href="/trainings">Trainings</a>
                         <a className="transform transition-transform duration-200 hover:scale-110 hover:text-white" href="#">Blog</a>
-                        <a className="transform transition-transform duration-200 hover:scale-110 hover:text-white" href="#">Resources</a>
-                        <a className="transform transition-transform duration-200 hover:scale-110 hover:text-white" href="#">Testimonials</a>
+                        <a className="transform transition-transform duration-200 hover:scale-110 hover:text-white" href="/resources">Resources</a>
+                        <a className="transform transition-transform duration-200 hover:scale-110 hover:text-white" href="/testimonials">Testimonials</a>
 
                         {/* About Mobile Toggle */}
                         <div className="flex flex-col items-center">

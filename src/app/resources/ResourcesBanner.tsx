@@ -2,12 +2,12 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 
-const AboutUsBanner = () => {
+const ResourcesBanner = () => {
     return (
-        <div className="relative w-full h-[400px] overflow-hidden ">
+        <div className="relative w-full h-[400px] overflow-hidden">
             {/* Background Image */}
             <Image
-                src="/Assets/aboutus.jpg"
+                src="/Assets/training.jpg"
                 alt="Background"
                 fill
                 className="object-cover brightness-30"
@@ -23,7 +23,7 @@ const AboutUsBanner = () => {
                     transition={{ duration: 0.9, ease: "easeOut" }}
                     className="text-[#0EC9AC] text-5xl font-bold mb-4"
                 >
-                    About Us
+                    Resources
                 </motion.h1>
 
                 {/* Description animates from bottom to top */}
@@ -33,11 +33,12 @@ const AboutUsBanner = () => {
                     transition={{ duration: 0.9, ease: "easeOut", delay: 0.3 }}
                     className="text-gray-200 text-lg w-[90%] px-10"
                 >
-                    Hacky Security is a rapidly growing Information Security Services organization focused on providing top-notch training and security services. We build intellectual capital with customers around the world.
+                    Open Source Tools, Community Labs and Presentations
                 </motion.p>
+
             </div>
         </div>
     );
 }
 
-export default AboutUsBanner
+export default ResourcesBanner

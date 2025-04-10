@@ -4,7 +4,7 @@ import AzureContent from "./AzureContent";
 import OnPremContent from "./OnPremContent";
 const RedTeamFilterSection = () => {
     const [activeTab, setActiveTab] = useState<"onPrem" | "azure" | null>("onPrem");
-
+    const [value, setvalue] = useState(false);
     return (
         <section className="px-4 py-16 bg-white text-[#0e0e32]">
             <div className="max-w-4xl mx-auto">
@@ -15,7 +15,7 @@ const RedTeamFilterSection = () => {
                             ? "bg-[#0e0e32] text-white border-[#0e0e32]"
                             : "bg-transparent text-[#0e0e32] border-[#0e0e32]"
                             }`}
-                        onClick={() => setActiveTab("onPrem")}
+                        onClick={() => { setActiveTab("onPrem"); setvalue(true) }}
                     >
                         Explore the on-prem red team Learning Path
                     </button>
@@ -24,18 +24,18 @@ const RedTeamFilterSection = () => {
                             ? "bg-[#0e0e32] text-white border-[#0e0e32]"
                             : "bg-transparent text-[#0e0e32] border-[#0e0e32]"
                             }`}
-                        onClick={() => setActiveTab("azure")}
+                        onClick={() => { setActiveTab("azure"); setvalue(true) }}
                     >
                         Explore the azure red team Learning Path
                     </button>
                 </div>
 
                 {/* TOGGLED CONTENT */}
-                <div className="mb-10">
-                    {activeTab === "onPrem" && (
+                <div className="mb-10 ">
+                    {activeTab === "onPrem" && value == true && (
                         <OnPremContent />
                     )}
-                    {activeTab === "azure" && (
+                    {activeTab === "azure" && value == true && (
                         <AzureContent />
                     )}
                 </div>
