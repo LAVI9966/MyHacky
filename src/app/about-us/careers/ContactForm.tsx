@@ -57,13 +57,7 @@ export default function ContactForm() {
                             onChange={(e) => setEmail(e.target.value)}
                             className="bg-[#0A0A0A] border border-gray-700 text-white rounded px-4 py-3 pr-12 focus:outline-none focus:ring-2 focus:ring-[#0EC9AC]"
                         />
-                        <div className="absolute right-3 bottom-3">
-                            <img
-                                src="/email-icon.png" // replace with your actual icon path
-                                alt="email icon"
-                                className="w-6 h-6"
-                            />
-                        </div>
+
                     </div>
                 </div>
 

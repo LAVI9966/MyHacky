@@ -10,7 +10,7 @@ const Navbar = () => {
     const [aboutOpen, setAboutOpen] = useState(false); // mobile dropdown
 
     return (
-        <div className="bg-black text-gray-400 w-full z-15 ">
+        <div className="bg-black text-gray-400 w-full z-50 ">
             <nav className="flex items-center justify-between px-6  md:justify-center relative">
                 {/* Mobile Logo */}
                 <div className="text-xl font-bold md:hidden text-white">
@@ -51,13 +51,13 @@ const Navbar = () => {
 
                     {/* Social Icons */}
                     <li className="bg-white rounded-full p-1 transition duration-200 hover:bg-black">
-                        <a className="text-black hover:text-white text-lg flex items-center justify-center" href="#"><IoLogoTwitter /></a>
+                        <a className="text-black hover:text-white text-lg flex items-center justify-center" href="https://x.com/AlteredSecurity"><IoLogoTwitter /></a>
                     </li>
                     <li className="bg-white rounded-full p-1 transition duration-200 hover:bg-black">
-                        <a className="text-black hover:text-white text-lg flex items-center justify-center" href="#"><FaLinkedin /></a>
+                        <a className="text-black hover:text-white text-lg flex items-center justify-center" href="https://www.linkedin.com/company/alteredsecurity/"><FaLinkedin /></a>
                     </li>
                     <li className="bg-white rounded-full p-1 transition duration-200 hover:bg-black">
-                        <a className="text-black hover:text-white text-lg flex items-center justify-center" href="#"><FaDiscord /></a>
+                        <a className="text-black hover:text-white text-lg flex items-center justify-center" href="https://discord.com/invite/vcEwaRMwJe"><FaDiscord /></a>
                     </li>
                 </ul>
 
@@ -71,38 +71,66 @@ const Navbar = () => {
 
                 {/* Mobile Menu */}
                 {isOpen && (
-                    <div className="absolute top-full left-0 w-full bg-black flex flex-col items-center space-y-4 py-6 md:hidden z-10 border-t border-gray-700">
-                        <a className="transform transition-transform duration-200 hover:scale-110 hover:text-white" href="/home">Courses</a>
-                        <a className="transform transition-transform duration-200 hover:scale-110 hover:text-white" href="/bootcamps">Bootcamps</a>
-                        <a className="transform transition-transform duration-200 hover:scale-110 hover:text-white" href="/certifications">Certifications</a>
-                        <a className="transform transition-transform duration-200 hover:scale-110 hover:text-white" href="/trainings">Trainings</a>
-                        <a className="transform transition-transform duration-200 hover:scale-110 hover:text-white" href="#">Blog</a>
-                        <a className="transform transition-transform duration-200 hover:scale-110 hover:text-white" href="/resources">Resources</a>
-                        <a className="transform transition-transform duration-200 hover:scale-110 hover:text-white" href="/testimonials">Testimonials</a>
+                    <div className="absolute top-full left-0 w-full bg-white flex flex-col items-start  space-y-4 py-6 md:hidden z-10 border-t border-gray-700">
+                        <div className='w-full border-b-1 pl-4 pb-4'>
+                            <a className="transform transition-transform duration-200  hover:scale-110 text-black" href="/home">Courses</a>
+                        </div>
+                        <div className='w-full border-b-1 pl-4 pb-4'>
+
+                            <a className="transform transition-transform duration-200 hover:scale-110 text-black" href="/bootcamps">Bootcamps</a>
+                        </div>
+                        <div className='w-full border-b-1 pl-4 pb-4'>
+
+                            <a className="transform transition-transform duration-200 hover:scale-110 text-black" href="/certifications">Certifications</a>
+                        </div>
+                        <div className='w-full border-b-1 pl-4 pb-4'>
+
+                            <a className="transform transition-transform duration-200 hover:scale-110 text-black" href="/trainings">Trainings</a>
+                        </div>
+                        <div className='w-full border-b-1 pl-4 pb-4'>
+
+                            <a className="transform transition-transform duration-200 hover:scale-110 text-black" href="#">Blog</a>
+                        </div>
+                        <div className='w-full border-b-1 pl-4 pb-4'>
+
+                            <a className="transform transition-transform duration-200 hover:scale-110 text-black" href="/resources">Resources</a>
+                        </div>
+                        <div className='w-full border-b-1 pl-4 pb-4'>
+
+                            <a className="transform transition-transform duration-200 hover:scale-110 text-black" href="/testimonials">Testimonials</a>
+                        </div>
 
                         {/* About Mobile Toggle */}
-                        <div className="flex flex-col items-center">
+                        <div className="flex flex-col items-start w-full border-b-1 pl-4 pb-4">
                             <button
-                                className="transform transition-transform duration-200 hover:scale-110 hover:text-white cursor-pointer"
+                                className="flex items-center justify-between w-full pr-4 gap-2 transform transition-transform duration-200 hover:scale-105 text-black cursor-pointer"
                                 onClick={() => setAboutOpen(!aboutOpen)}
                             >
                                 About
+                                <span className="text-sm">{aboutOpen ? "▲" : "▼"}</span>
                             </button>
+
                             {aboutOpen && (
-                                <div className="flex flex-col space-y-2 mt-2 text-base">
-                                    <a className="hover:text-white" href="#">Our Team</a>
-                                    <a className="hover:text-white" href="#">Mission</a>
-                                    <a className="hover:text-white" href="#">Careers</a>
+                                <div className="flex flex-col w-full space-y-2 mt-4 text-base">
+                                    <div className='w-full border-b-1 border-t-1 pl-4 pb-4 pt-4'>
+                                        <a href="/about-us/careers" className="transform transition-transform duration-200 hover:scale-110 text-black" >Careers</a>
+                                    </div>
+                                    <div className='w-full border-b-1 pl-4 pb-4 pt-2'>
+                                        <a href="/about-us/news" className="transform transition-transform duration-200 hover:scale-110 text-black" > News</a>
+                                    </div>
                                 </div>
                             )}
                         </div>
 
-                        <a className="transform transition-transform duration-200 hover:scale-110 hover:text-white" href="/contact">Contact Us</a>
+                        <div className='w-full border-b-1 pl-4 pb-4'>
 
-                        <div className="flex space-x-4 text-lg">
-                            <a className="bg-white rounded-full p-2 text-black hover:text-white hover:bg-black transition" href="#"><IoLogoTwitter /></a>
-                            <a className="bg-white rounded-full p-2 text-black hover:text-white hover:bg-black transition" href="#"><FaLinkedin /></a>
-                            <a className="bg-white rounded-full p-2 text-black hover:text-white hover:bg-black transition" href="#"><FaDiscord /></a>
+                            <a className="transform transition-transform duration-200 hover:scale-110 text-black" href="/contact">Contact Us</a>
+                        </div>
+
+                        <div className="flex space-x-4 text-lg w-full border-b-1 pl-4 pb-4">
+                            <a className="bg-white rounded-full p-2 text-black text-black hover:bg-black transition" href="https://x.com/AlteredSecurity"><IoLogoTwitter /></a>
+                            <a className="bg-white rounded-full p-2 text-black text-black hover:bg-black transition" href="https://www.linkedin.com/company/alteredsecurity/"><FaLinkedin /></a>
+                            <a className="bg-white rounded-full p-2 text-black text-black hover:bg-black transition" href="https://discord.com/invite/vcEwaRMwJe"><FaDiscord /></a>
                         </div>
                     </div>
                 )}

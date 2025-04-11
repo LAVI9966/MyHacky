@@ -1,6 +1,46 @@
 'use client'
 import Image from "next/image";
 import { useState } from "react";
+
+
+const PopupModal = ({
+    isVisible,
+    onClose,
+    onGoToCart,
+}: {
+    isVisible: boolean;
+    onClose: () => void;
+    onGoToCart: () => void;
+}) => {
+    if (!isVisible) return null;
+
+    return (
+        <div className="fixed inset-0 flex items-center justify-center z-50 bg-transparent  backdrop-brightness-50 bg-opacity-40">
+            <div className="bg-white p-6 rounded-xl shadow-lg text-center max-w-sm w-full">
+                <div className="flex items-center justify-center gap-2 mb-4">
+                    <div className="w-5 h-5 bg-green-500 text-white rounded-full flex items-center justify-center">
+                        ✔
+                    </div>
+                    <p className="text-gray-700 font-medium">Product added to cart successfully!</p>
+                </div>
+                <div className="flex justify-center gap-4 mt-6">
+                    <button
+                        onClick={onClose}
+                        className="bg-[#007BBA] text-white px-4 py-2 rounded font-semibold hover:bg-blue-700"
+                    >
+                        OK
+                    </button>
+                    <button
+                        onClick={onGoToCart}
+                        className="bg-[#007BBA] text-white px-4 py-2 rounded font-semibold hover:bg-blue-700"
+                    >
+                        Go to Cart
+                    </button>
+                </div>
+            </div>
+        </div>
+    );
+};
 // courseData.ts
 type Course = {
     id: number;
@@ -112,6 +152,19 @@ const CourseCard = () => {
 const SingleCourseCard = ({ course }: { course: Course }) => {
     const [quantity, setQuantity] = useState(1);
     const [accessPeriod, setAccessPeriod] = useState(course.accessOptions[0]);
+    const [showModal, setShowModal] = useState(false);
+
+    const handleAddToCart = () => {
+        // simulate add to cart logic here
+        setShowModal(true);
+    };
+
+    const handleGoToCart = () => {
+        // redirect to cart page
+        window.location.href = "/cart"; // change path if needed
+    };
+
+    const handleClose = () => setShowModal(false);
 
     return (
         <div className="max-w-4xl mx-auto border border-teal-300 rounded-xl p-6 shadow-md bg-white space-y-6 mb-8">
@@ -168,10 +221,20 @@ const SingleCourseCard = ({ course }: { course: Course }) => {
                     />
                 </div>
 
-                <button className="bg-teal-500 text-white font-medium px-10 py-2 mt-7 rounded-full hover:bg-teal-600 transition text-sm whitespace-nowrap">
+                <button
+                    onClick={handleAddToCart}
+                    className="bg-teal-500 text-white font-medium px-10 py-2 mt-7 rounded-full hover:bg-teal-600 transition text-sm whitespace-nowrap"
+                >
                     Add to Cart
                 </button>
+
             </div>
+            <PopupModal
+                isVisible={showModal}
+                onClose={handleClose}
+                onGoToCart={handleGoToCart}
+            />
+
         </div>
     );
 };
