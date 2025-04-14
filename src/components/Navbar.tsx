@@ -10,7 +10,7 @@ const Navbar = () => {
     const [aboutOpen, setAboutOpen] = useState(false); // mobile dropdown
 
     return (
-        <div className="bg-black text-gray-400 w-full z-50 ">
+        <div className="bg-black text-gray-400 w-full z-[1000]">
             <nav className="flex items-center justify-between px-6  md:justify-center relative">
                 {/* Mobile Logo */}
                 <div className="text-xl font-bold md:hidden text-white">
@@ -31,17 +31,17 @@ const Navbar = () => {
                     <a className="transform transition-transform duration-200 hover:scale-110 hover:text-white" href="/certifications">Certifications</a>
 
                     <li className='transform transition-transform duration-200 hover:scale-110'><a className="transform transition-transform duration-200 hover:scale-110 hover:text-white" href="/trainings">Trainings</a></li>
-                    <li className='transform transition-transform duration-200 hover:scale-110'><a className="transform transition-transform duration-200 hover:scale-110 hover:text-white" href="#">Blog</a></li>
+                    {/* <li className='transform transition-transform duration-200 hover:scale-110'><a className="transform transition-transform duration-200 hover:scale-110 hover:text-white" href="#">Blog</a></li> */}
                     <li className='transform transition-transform duration-200 hover:scale-110'><a className="transform transition-transform duration-200 hover:scale-110 hover:text-white" href="/resources">Resources</a></li>
                     <li className='transform transition-transform duration-200 hover:scale-110'><a className="transform transition-transform duration-200 hover:scale-110 hover:text-white" href="/testimonials">Testimonials</a></li>
 
                     {/* About with dropdown */}
-                    <li className="relative group transform transition-transform duration-200 hover:scale-110">
+                    <li className="relative group transform transition-transform duration-200 hover:scale-110 z-[1000]">
                         <div className="flex items-center cursor-pointer z-15 text-gray-400 hover:text-white transition">
-                            <a href="/about-us" className="block px-4 py-2 ">About</a>
+                            <a href="/about-us" className="block px-4 py-2 z-[1000]">About</a>
                             <RiArrowDropDownLine size={25} />
                         </div>
-                        <ul className="absolute top-full left-0 mt-2 w-40 bg-gray-900 rounded shadow-md opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-all duration-300 z-[999]">
+                        <ul className="absolute top-full left-0 mt-2 w-40 bg-gray-900 rounded shadow-md opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-all duration-300 z-[1000]">
                             <li><a href="/about-us/careers" className="block px-4 py-2 hover:bg-gray-700 border-t-4 border-blue-400">Careers</a></li>
                             <li><a href="/about-us/news" className="block px-4 py-2 hover:bg-gray-700">News</a></li>
                         </ul>
@@ -87,10 +87,10 @@ const Navbar = () => {
 
                             <a className="transform transition-transform duration-200 hover:scale-110 text-black" href="/trainings">Trainings</a>
                         </div>
-                        <div className='w-full border-b-1 pl-4 pb-4'>
+                        {/* <div className='w-full border-b-1 pl-4 pb-4'>
 
                             <a className="transform transition-transform duration-200 hover:scale-110 text-black" href="#">Blog</a>
-                        </div>
+                        </div> */}
                         <div className='w-full border-b-1 pl-4 pb-4'>
 
                             <a className="transform transition-transform duration-200 hover:scale-110 text-black" href="/resources">Resources</a>

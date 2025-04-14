@@ -2,6 +2,7 @@
 import Image from "next/image";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import Link from "next/link";
 
 interface Course {
     title: string,
@@ -75,7 +76,9 @@ const CourseCard = ({ courseData }: CourseCardProps) => {
                             {/* Enroll Button */}
                             <div className="mt-5 flex justify-center">
                                 <button className="bg-emerald-400 hover:bg-emerald-300 text-black font-semibold px-6 py-2 rounded-full transition">
-                                    Enroll Now
+                                    <Link href={'/enrollbootcamp'}>
+                                        Enroll Now
+                                    </Link>
                                 </button>
                             </div>
                         </div>

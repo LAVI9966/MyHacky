@@ -1,5 +1,6 @@
 'use client'
 import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
 
 
@@ -193,9 +194,9 @@ const SingleCourseCard = ({ course }: { course: Course }) => {
 
             {/* Action Row */}
             <div className="flex flex-wrap items-center gap-4 pt-4">
-                <button className="bg-teal-500 text-white font-medium px-10 py-2 mt-7 rounded-full hover:bg-teal-600 transition text-sm whitespace-nowrap">
+                <Link href={"/adlab"} className="bg-teal-500 text-white font-medium px-10 py-2 mt-7 rounded-full hover:bg-teal-600 transition text-sm whitespace-nowrap">
                     More Details
-                </button>
+                </Link>
 
                 <div className="flex flex-col flex-grow min-w-[100px] gap-2">
                     <label className="text-sm font-medium text-gray-600 whitespace-nowrap">Access Period</label>

@@ -22,7 +22,7 @@ const CartContent = ({ onClose, cartItems }: CartContentProps) => {
     const subtotal = cartItems.reduce((total, item) => total + item.price * item.quantity, 0)
 
     return (
-        <div className="p-4 flex flex-col bg-white text-black h-full bg-gray-50 bg-transparent backdrop-brightness-50">
+        <div className="p-4 flex flex-col bg-white text-black h-full bg-gray-50 bg-transparent backdrop-brightness-30">
             {/* Header */}
             <div className="flex justify-between items-center mb-4 border-b pb-2">
                 <div className="flex items-center w-full justify-center gap-2">

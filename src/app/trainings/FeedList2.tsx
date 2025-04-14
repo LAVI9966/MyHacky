@@ -67,11 +67,14 @@ const FeedList2: React.FC = () => {
                             />
                             <div className="p-4 bg-[#072540] mt-4 text-center">
                                 <h3 className="font-bold text-lg mb-4">{course.title}</h3>
-                                <button className="bg-[#0EC9AC] text-white font-semibold px-6 py-2 rounded hover:opacity-90 transition">
-                                    <Link href={'/basic-training'} >
-                                        {course.buttonLabel}
-                                    </Link>
-                                </button>
+
+                                <Link
+                                    href={course.buttonLabel === "Read More" ? '/basic-training' : 'https://redlabs.enterprisesecurity.io/'}
+                                    className="bg-[#0EC9AC] text-white font-semibold px-6 py-2 rounded hover:opacity-90 transition"
+                                >
+                                    {course.buttonLabel}
+                                </Link>
+
                             </div>
                         </motion.div>
                     );
