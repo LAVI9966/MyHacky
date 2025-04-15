@@ -71,7 +71,7 @@ const Navbar = () => {
 
                 {/* Mobile Menu */}
                 {isOpen && (
-                    <div className="absolute top-full left-0 w-full bg-white flex flex-col items-start  space-y-4 py-6 md:hidden z-10 border-t border-gray-700">
+                    <div className="absolute top-full left-0 w-full bg-white flex flex-col items-start  space-y-4 py-6 md:hidden z-[1000] border-t border-gray-700">
                         <div className='w-full border-b-1 pl-4 pb-4'>
                             <a className="transform transition-transform duration-200  hover:scale-110 text-black" href="/home">Courses</a>
                         </div>

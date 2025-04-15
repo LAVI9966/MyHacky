@@ -7,9 +7,9 @@ const TeachingMethodology = () => {
             <h2 className="text-[#0EC9AC] pb-10 pt-20 text-center text-5xl font-bold mb-2">
                 Teaching Methodology
             </h2>
-            <div className="flex flex-col md:flex-row items-center gap-10">
+            <div className="flex flex-col-reverse md:flex-row items-center gap-10">
                 {/* Text */}
-                <div className="md:w-1/2 text-[24px] leading-relaxed space-y-4">
+                <div className="md:w-1/2 md:text-[24px] text-base text-center leading-relaxed space-y-4">
                     <p>
                         Our teaching methodology is designed around hands-on learning. With this approach,
                         students will retain the topics for longer and apply what they have learned in a tangible

@@ -66,7 +66,7 @@ const Evasion_Lab = () => {
                 />
             </div>
 
-            <div className="max-w-6xl w-full bg-white p-8 rounded-xl shadow-md gap-6">
+            <div className="max-w-6xl w-full bg-white p-2 md:p-8 rounded-xl shadow-md gap-6">
                 <h2 className="text-3xl font-bold bg-gray-300 px-2 py-1 rounded-xl text-gray-800 mb-4">
                     Certified Red Team Professional Lab Objective:
                 </h2>

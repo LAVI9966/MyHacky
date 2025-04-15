@@ -58,7 +58,7 @@ const PastBootcamp = () => {
                     initial={{ opacity: 0, y: 40 }}
                     animate={isInView ? { opacity: 1, y: 0 } : {}}
                     transition={{ duration: 0.9, ease: "easeOut" }}
-                    className="text-[#0EC9AC] pb-10 pt-20 text-center text-5xl font-bold mb-2"
+                    className="text-[#0EC9AC] pb-10 pt-20 text-center md:text-5xl text-base font-bold mb-2"
                 >
                     Past Bootcamps
                 </motion.h1>

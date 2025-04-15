@@ -21,7 +21,7 @@ const CertificationBanner = () => {
                     initial={{ opacity: 0, y: -40 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.9, ease: "easeOut" }}
-                    className="text-[#0EC9AC] text-5xl font-bold mb-4"
+                    className="text-[#0EC9AC] md:text-5xl text-2xl font-bold mb-4"
                 >
                     Certifications
                 </motion.h1>

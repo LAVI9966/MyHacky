@@ -32,7 +32,7 @@ const ContactForm: React.FC = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.6 }}
                 transition={{ duration: 0.9, ease: "easeOut" }}
-                className="text-4xl sm:text-5xl font-bold text-[#0EC9AC] text-center mb-10"
+                className="md:text-4xl text-2xl font-bold text-[#0EC9AC] text-center mb-10"
             >
                 Contact Us For More Details on Training
             </motion.h1>

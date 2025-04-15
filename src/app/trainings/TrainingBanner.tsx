@@ -31,7 +31,7 @@ const TrainingBanner = () => {
                     initial={{ opacity: 0, y: 40 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.9, ease: "easeOut", delay: 0.3 }}
-                    className="text-gray-200 text-lg w-[90%] px-10"
+                    className="text-gray-200 text-base md:w-[90%] w-full px-10 mb-5"
                 >
                     Our coveted trainings are fully hands-on and are taught by world renowned experts who have spoken and trained at DEF CON, BlackHat and more.
                     All trainings available on-site and virtual!

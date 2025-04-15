@@ -21,7 +21,7 @@ const BootcampBanner = () => {
                     initial={{ opacity: 0, y: -40 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.9, ease: "easeOut" }}
-                    className="text-[#0EC9AC] text-5xl font-bold mb-4"
+                    className="text-[#0EC9AC] md:text-5xl text-base font-bold mb-4"
                 >
                     Pick from our live Bootcamps
                 </motion.h1>
@@ -31,7 +31,7 @@ const BootcampBanner = () => {
                     initial={{ opacity: 0, y: 40 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.9, ease: "easeOut", delay: 0.3 }}
-                    className="text-gray-200 text-lg w-[90%] px-10"
+                    className="text-gray-200 text-lg md:w-[90%] w-full px-10"
                 >
                     Our popular bootcamps run for 4 weeks and provide instructor-led training and hands-on labs where you can learn with fellow students from the comfort of your home.
                 </motion.p>

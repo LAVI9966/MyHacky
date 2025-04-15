@@ -10,7 +10,7 @@ const TrainingCalendar: React.FC = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.5 }}
                 transition={{ duration: 0.9, ease: 'easeOut' }}
-                className="text-4xl sm:text-5xl font-bold text-[#0EC9AC] mb-4 text-center"
+                className="md:text-4xl text-2xl font-bold text-[#0EC9AC] mb-4 text-center"
             >
                 Training Calendar
             </motion.h1>

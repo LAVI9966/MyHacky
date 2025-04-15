@@ -6,7 +6,7 @@ const What_will_you_Learn = () => {
             <h2 className="text-3xl font-bold bg-gray-300 px-2 py-1 rounded-xl text-gray-800 mb-4">
                 23 Learning Objectives, 59 Tasks, {'>'}120 Hours of Torture
             </h2>
-            <div className="bg-white p-6 rounded-lg shadow-md text-sm text-gray-800 space-y-6 max-w-4xl mx-auto">
+            <div className="bg-white md:p-6 p-2 rounded-lg shadow-md text-sm text-gray-800 space-y-6 max-w-4xl mx-auto">
                 {/* I–III Already Present Sections (omitted here for brevity) */}
 
                 {/* IV. Local Privilege Escalation */}

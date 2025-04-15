@@ -19,7 +19,7 @@ const page = () => {
             <ReadTeamLabs />
             <FilterSection />
             <CourseCard />
-            <CartButton />
+            {/* <CartButton /> */}
         </div>
     )
 }

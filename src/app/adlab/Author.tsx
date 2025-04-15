@@ -42,7 +42,7 @@ const Author = () => {
     ];
     return (
         <div>
-            <div>
+            <div className='p-2'>
                 <h2 className="text-3xl font-bold bg-gray-300 px-2 py-1 rounded-xl text-gray-800 mb-4">
                     Nikhil: Founder of Altered Security, BlackHat USA Trainer, DEF CON Speaker
                 </h2>

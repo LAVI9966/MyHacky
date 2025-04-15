@@ -2,7 +2,7 @@ import React from 'react';
 
 const Contact = () => {
     return (
-        <div className="contact-container max-w-4xl mx-auto p-6">
+        <div className="contact-container max-w-4xl mx-auto p-2 md:p-6">
             {/* <h1 className="text-2xl font-bold mb-6">Hacky Security Course</h1> */}
 
             <iframe

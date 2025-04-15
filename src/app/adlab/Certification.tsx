@@ -3,7 +3,7 @@ import React from 'react';
 
 const Certification = () => {
     return (
-        <div className="bg-white p-6 rounded-lg shadow-md text-gray-800 space-y-10 max-w-4xl mx-auto text-sm">
+        <div className="bg-white md:p-6 p-2 rounded-lg shadow-md text-gray-800 space-y-10 max-w-4xl mx-auto text-sm">
             {/* Section 1: CRTP Overview */}
             <div>
                 <h2 className="text-3xl font-bold bg-gray-300 px-2 py-1 rounded-xl text-gray-800 mb-4">

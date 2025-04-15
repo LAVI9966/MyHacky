@@ -55,7 +55,7 @@ const Purchase_Options = () => {
     ];
     return (
         <div>
-            <div className="flex flex-col items-center justify-center p-6 bg-gray-100 space-y-10">
+            <div className="flex flex-col items-center justify-center md:p-6 p-2 bg-gray-100 space-y-10">
                 <h2 className="text-3xl font-bold bg-gray-300 px-2 py-1 rounded-xl text-gray-800 mb-4">Purchase On-Demand Lab</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-6">
                     {cards.map((card, index) => (
