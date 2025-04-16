@@ -1,6 +1,61 @@
 import React from 'react';
+// Define the Course type to match the one from the parent component
+type Course = {
+    _id: string
+    title: string
+    category: string
+    prices: string
+    bootcampAvailability: string
+    courseDetails: {
+        overview: string
+        accessPeriod: {
+            days: string
+            price: string
+            _id: string
+        }[]
+        gcbLab: {
+            image: string
+            labs: {
+                title: string
+                description: string
+                imageUrl: string
+                _id: string
+            }[]
+        }
+        onDemandLab: {
+            title: string
+            price: string
+            _id: string
+        }[]
+    }
+    author: {
+        title: string
+        description: string
+        imageUrl: string
+    }
+    termsAndConditions: string[]
+    howLearn: {
+        title: string
+        points: string[]
+        _id: string
+    }[]
+    certification: {
+        title: string
+        description: string
+        image: string
+        _id: string
+    }[]
+    createdAt: string
+    updatedAt: string
+    __v: number
+}
 
-const What_will_you_Learn = () => {
+// Define props interface for TabMenu
+interface TabMenuProps {
+    course: Course
+}
+
+const What_will_you_Learn = ({ course }: TabMenuProps) => {
     return (
         <div>
             <h2 className="text-3xl font-bold bg-gray-300 px-2 py-1 rounded-xl text-gray-800 mb-4">

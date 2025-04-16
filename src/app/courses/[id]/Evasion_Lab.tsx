@@ -1,7 +1,62 @@
 import React from 'react';
 import Image from 'next/image';
+// Define the Course type to match the one from the parent component
+type Course = {
+    _id: string
+    title: string
+    category: string
+    prices: string
+    bootcampAvailability: string
+    courseDetails: {
+        overview: string
+        accessPeriod: {
+            days: string
+            price: string
+            _id: string
+        }[]
+        gcbLab: {
+            image: string
+            labs: {
+                title: string
+                description: string
+                imageUrl: string
+                _id: string
+            }[]
+        }
+        onDemandLab: {
+            title: string
+            price: string
+            _id: string
+        }[]
+    }
+    author: {
+        title: string
+        description: string
+        imageUrl: string
+    }
+    termsAndConditions: string[]
+    howLearn: {
+        title: string
+        points: string[]
+        _id: string
+    }[]
+    certification: {
+        title: string
+        description: string
+        image: string
+        _id: string
+    }[]
+    createdAt: string
+    updatedAt: string
+    __v: number
+}
 
-const Evasion_Lab = () => {
+// Define props interface for TabMenu
+interface TabMenuProps {
+    course: Course
+}
+
+const Evasion_Lab = ({ course }: TabMenuProps) => {
     const cards = [
         {
             title: "On Demand Lab",
@@ -54,7 +109,7 @@ const Evasion_Lab = () => {
             price: "$29"
         },
     ];
-    return (
+    return (<>
         <div className="flex flex-col items-center justify-center  bg-gray-100 space-y-10">
             <div className="max-w-6xl w-full">
                 <Image
@@ -245,6 +300,7 @@ const Evasion_Lab = () => {
                 </div>
             </div>
         </div>
+    </>
     );
 };
 

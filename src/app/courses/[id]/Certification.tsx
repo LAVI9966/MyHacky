@@ -1,7 +1,62 @@
 import Image from 'next/image';
 import React from 'react';
+// Define the Course type to match the one from the parent component
+type Course = {
+    _id: string
+    title: string
+    category: string
+    prices: string
+    bootcampAvailability: string
+    courseDetails: {
+        overview: string
+        accessPeriod: {
+            days: string
+            price: string
+            _id: string
+        }[]
+        gcbLab: {
+            image: string
+            labs: {
+                title: string
+                description: string
+                imageUrl: string
+                _id: string
+            }[]
+        }
+        onDemandLab: {
+            title: string
+            price: string
+            _id: string
+        }[]
+    }
+    author: {
+        title: string
+        description: string
+        imageUrl: string
+    }
+    termsAndConditions: string[]
+    howLearn: {
+        title: string
+        points: string[]
+        _id: string
+    }[]
+    certification: {
+        title: string
+        description: string
+        image: string
+        _id: string
+    }[]
+    createdAt: string
+    updatedAt: string
+    __v: number
+}
 
-const Certification = () => {
+// Define props interface for TabMenu
+interface TabMenuProps {
+    course: Course
+}
+
+const Certification = ({ course }: TabMenuProps) => {
     return (
         <div className="bg-white md:p-6 p-2 rounded-lg shadow-md text-gray-800 space-y-10 max-w-4xl mx-auto text-sm">
             {/* Section 1: CRTP Overview */}
