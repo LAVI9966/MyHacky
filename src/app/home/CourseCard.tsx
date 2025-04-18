@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { useFilter } from '@/Context/FilterContext'
-
+import { useCart } from '@/Context/CartContext';
 const PopupModal = ({
     isVisible,
     onClose,
@@ -33,7 +33,6 @@ const PopupModal = ({
                         OK
                     </button>
                     <button
-                        onClick={onGoToCart}
                         className="bg-[#007BBA] text-white px-4 py-2 rounded font-semibold hover:bg-blue-700"
                     >
                         Go to Cart
@@ -46,22 +45,54 @@ const PopupModal = ({
 
 // Backend structure based Course type
 type Course = {
-    _id: string;
-    title: string;
-    category: string;
+    _id: string
+    title: string
+    category: string
+    prices: string
+    bootcampAvailability: string
     courseDetails: {
-        overview: string;
+        overview: string
         accessPeriod: {
-            days: string;
-            price: string;
-            _id: string;
-        }[];
-        gcbLab?: {
-            image: string;
-        };
-    };
-    // optionally add more fields from the backend if needed
-};
+            days: string
+            price: string
+            _id: string
+        }[]
+        gcbLab: {
+            image: string
+            labs: {
+                title: string
+                description: string
+                imageUrl: string
+                _id: string
+            }[]
+        }
+        onDemandLab: {
+            title: string
+            price: string
+            _id: string
+        }[]
+    }
+    author: {
+        title: string
+        description: string
+        imageUrl: string
+    }
+    termsAndConditions: string[]
+    howLearn: {
+        title: string
+        points: string[]
+        _id: string
+    }[]
+    certification: {
+        title: string
+        description: string
+        image: string
+        _id: string
+    }[]
+    createdAt: string
+    updatedAt: string
+    __v: number
+}
 
 const CourseCard = () => {
     const { filteredProducts } = useFilter();
@@ -81,8 +112,17 @@ const SingleCourseCard = ({ course }: { course: Course }) => {
         course.courseDetails.accessPeriod[0]?._id || ""
     );
     const [showModal, setShowModal] = useState(false);
+    const { addToCart } = useCart();
 
     const handleAddToCart = () => {
+        addToCart({
+            id: course._id,
+            title: course.title,
+            quantity,
+            price: Number(course.courseDetails.accessPeriod.find(p => p._id === accessPeriod)?.price),
+            accessId: accessPeriod,
+            imageUrl: course.courseDetails.gcbLab.image || '/Assets/Shield.avif'
+        });
         setShowModal(true);
     };
 
@@ -113,7 +153,7 @@ const SingleCourseCard = ({ course }: { course: Course }) => {
                 </div>
                 <div className="w-full lg:w-1/2">
                     <Image
-                        src={"/Assets/Diagram-01.avif"} // <-- fallback path
+                        src={course.courseDetails.gcbLab.image} // <-- fallback path
                         alt="Course diagram"
                         width={600}
                         height={300}
@@ -137,8 +177,9 @@ const SingleCourseCard = ({ course }: { course: Course }) => {
                     <select
                         value={accessPeriod}
                         onChange={(e) => setAccessPeriod(e.target.value)}
-                        className="border border-gray-400 rounded-lg px-4 py-2 text-sm focus:outline-none w-full"
+                        className="border border-gray-400 rounded-lg px-4 whitespace-normal py-2 text-sm focus:outline-none"
                     >
+
                         {course.courseDetails.accessPeriod.map((option) => (
                             <option key={option._id} value={option._id}>
                                 {option.days} Days - ₹{option.price}

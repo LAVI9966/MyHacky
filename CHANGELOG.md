@@ -18,3 +18,12 @@ All notable changes to this project will be documented in this file.
 
 ## [1.0.0] - 2025-04-14
 
+### Added
+- Worked On Add to cart
+- Added Data On Admin Side 
+
+### Changed
+- CartButton.tsx [ card button Position ]
+
+## [1.0.0] - 2025-04-17
+

@@ -7,137 +7,137 @@ import { motion } from 'framer-motion';
 const sponsorships = [
     {
         date: "2024/09/07",
-        imgSrc: '/sponsors/redtseam.png',
+        imgSrc: '/Assets/Shield.avif',
         text: "Altered Security is proud to sponsor Cybersecurity Event at Gujarat University",
     },
     {
         date: "2024/09/02",
-        imgSrc: '/sponsors/redteam.png',
+        imgSrc: '/Assets/Shield.avif',
         text: "Enrollments are now open for October 2024 batches for three of our popular bootcamps",
     },
     {
         date: "2024/08/31",
-        imgSrc: '/sponsors/redteam.png',
+        imgSrc: '/Assets/Shield.avif',
         text: "Altered Security is proud to sponsor H7Tex International CTF",
     },
     {
         date: "2024/08/20",
-        imgSrc: '/sponsors/redteam.png',
+        imgSrc: '/Assets/Shield.avif',
         text: "Altered Security is proud to sponsor Red Team Space EKOPARTY",
     },
     {
         date: "2024/08/11",
-        imgSrc: '/sponsors/redteam.png',
+        imgSrc: '/Assets/Shield.avif',
         text: "Altered Security is proud to sponsor HackTheBox Kerala",
     },
     {
         date: "2024/08/01",
-        imgSrc: '/sponsors/redteam.png',
+        imgSrc: '/Assets/Shield.avif',
         text: "Altered Security is proud to sponsor Cyberonites Club's Cybersecurity Capture The Flag (CTF) Event",
     },
     {
         date: "2024/07/31",
-        imgSrc: '/sponsors/redteam.png',
+        imgSrc: '/Assets/Shield.avif',
         text: "Altered Security is proud to sponsor BSides Dehradun",
     },
     {
         date: "2024/07/21",
-        imgSrc: '/sponsors/redteam.png',
+        imgSrc: '/Assets/Shield.avif',
         text: "Altered Security is proud to sponsor CYBERGON_2024CTF",
     },
     {
         date: "2024/07/18",
-        imgSrc: '/sponsors/redteam.png',
+        imgSrc: '/Assets/Shield.avif',
         text: "Join Altered Security at DEF CON 32! Find us at Booth # 4 in the Exhibitors area and get some cool swag. We are also running two in-person trainings DEF CON",
     },
     {
         date: "2024/07/18",
-        imgSrc: '/sponsors/redteam.png',
+        imgSrc: '/Assets/Shield.avif',
         text: "​Join us for In-person DEF CON Training x 2 - August 12th and August 13th Active Directory Attacks for Red and Blue Teams - Advanced Edition",
     },
     {
         date: "2024/07/16",
-        imgSrc: '/sponsors/redteam.png',
+        imgSrc: '/Assets/Shield.avif',
         text: "Join us virtually for Active Directory Attacks for Red and Blue Teams - Advanced Edition from 3-4 August 2024 and 5-6 August 2024 at BlackHAT USA",
     },
     {
         date: "2024/07/07",
-        imgSrc: '/sponsors/redteam.png',
+        imgSrc: '/Assets/Shield.avif',
         text: "Altered Security is proud to sponsor OSCTF",
     },
     {
         date: "2024/07/01",
-        imgSrc: '/sponsors/redteam.png',
+        imgSrc: '/Assets/Shield.avif',
         text: "Avail 20% OFF on all the on-demand courses and lab extensions during Hacker Summer",
     },
     {
         date: "2024/06/20",
-        imgSrc: '/sponsors/redteam.png',
+        imgSrc: '/Assets/Shield.avif',
         text: "Enrollments are now open for our July 2024 Bootcamps",
     },
     {
         date: "2024/06/19",
-        imgSrc: '/sponsors/redteam.png',
+        imgSrc: '/Assets/Shield.avif',
         text: "Altered Security is proud to sponsor DeadSec CTF",
     },
     {
         date: "2024/06/17",
-        imgSrc: '/sponsors/redteam.png',
+        imgSrc: '/Assets/Shield.avif',
         text: "Altered Security is proud to sponsor ShunyaCTF",
     },
     {
         date: "2024/05/25",
-        imgSrc: '/sponsors/redteam.png',
+        imgSrc: '/Assets/Shield.avif',
         text: "​Altered Security is proud to sponsor CTF Event | RVCE bangalore | YCF Team | IITB Trust Lab",
     },
     {
         date: "2024/05/21",
-        imgSrc: '/sponsors/redteam.png',
+        imgSrc: '/Assets/Shield.avif',
         text: "Altered Security is proud to sponsor BSides Mumbai",
     },
     {
         date: "2024/02/27",
-        imgSrc: '/sponsors/redteam.png',
+        imgSrc: '/Assets/Shield.avif',
         text: "Altered Security is proud to sponsor Cyber Conclave at VIT Bhopal University",
     },
     {
         date: "2024/05/15",
-        imgSrc: '/sponsors/redteam.png',
+        imgSrc: '/Assets/Shield.avif',
         text: "Altered Security is proud to sponsor VULNCON 2024",
     },
     {
         date: "2024/05/08",
-        imgSrc: '/sponsors/redteam.png',
+        imgSrc: '/Assets/Shield.avif',
         text: "Altered Security is proud to sponsor NahamCon 2024",
     },
     {
         date: "2024/04/26",
-        imgSrc: '/sponsors/redteam.png',
+        imgSrc: '/Assets/Shield.avif',
         text: "Altered Security is proud to sponsor OWASP Bhopal",
     },
     {
         date: "2024/04/23",
-        imgSrc: '/sponsors/redteam.png',
+        imgSrc: '/Assets/Shield.avif',
         text: "Altered Security is proud to sponsor",
     },
     {
         date: "2024/04/19",
-        imgSrc: '/sponsors/redteam.png',
+        imgSrc: '/Assets/Shield.avif',
         text: "Altered Security is proud to sponsor SecuriNets Tunisia",
     },
     {
         date: "2024/09/07",
-        imgSrc: '/sponsors/redteam.png',
+        imgSrc: '/Assets/Shield.avif',
         text: "Altered Security is proud to sponsor Cybersecurity Event at Gujarat University",
     },
     {
         date: "2024/04/02",
-        imgSrc: '/sponsors/redteam.png',
+        imgSrc: '/Assets/Shield.avif',
         text: "Enrollments are now open for our June 2024 Bootcamps",
     },
     {
         date: "2024/09/07",
-        imgSrc: '/sponsors/redteam.png',
+        imgSrc: '/Assets/Shield.avif',
         text: "Altered Security is proud to sponsor Cybersecurity Event at Gujarat University",
     },
 ];
@@ -164,8 +164,9 @@ const NewsList = () => {
                                         alt="News Logo"
                                         width={80}
                                         height={80}
-                                        className="object-contain"
+                                        className="object-contain h-50"
                                     />
+
                                 </div>
                                 <div>
                                     <p className="text-[#0EC9AC] font-bold text-lg mb-1">{item.date}</p>

@@ -139,7 +139,7 @@ export default function TabMenu({ course }: TabMenuProps) {
                 </div>
 
                 {/* TAB CONTENT */}
-                <div className="bg-white p-4 mt-2 rounded-b-lg">
+                <div className="bg-white p-2 mt-2 rounded-b-lg">
                     {activeTabContent}
                 </div>
             </div>

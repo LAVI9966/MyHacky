@@ -79,10 +79,12 @@ const certifications = [
 
 const Certifications = () => {
     return (
-        <div className="grid gap-6 p-4 md:grid-cols-3 bg-[#DBDBDB] max-w-7xl mx-auto">
-            {certifications.map((cert, index) => (
-                <CertificationCard key={index} {...cert} />
-            ))}
+        <div className='bg-[#DBDBDB]'>
+            <div className="grid gap-6 p-4 md:grid-cols-3 bg-[#DBDBDB] max-w-7xl mx-auto">
+                {certifications.map((cert, index) => (
+                    <CertificationCard key={index} {...cert} />
+                ))}
+            </div>
         </div>
     )
 }

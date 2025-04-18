@@ -34,6 +34,7 @@ const RedTeamFilterSection = () => {
                     const titles = response.data.data.map((product: { title: string }) => product.title);
                     setProductTitles(titles);
                 }
+                console.log(response)
             } catch (error) {
                 console.log("Error fetching titles:", error);
             }
@@ -48,8 +49,8 @@ const RedTeamFilterSection = () => {
                 <div className="flex flex-wrap justify-center gap-4 mb-6">
                     <button
                         className={`px-6 py-3 rounded-full font-semibold border-2 transition-all duration-300 ${activeTab === "onPrem"
-                                ? "bg-[#0e0e32] text-white border-[#0e0e32]"
-                                : "bg-transparent text-[#0e0e32] border-[#0e0e32]"
+                            ? "bg-[#0e0e32] text-white border-[#0e0e32]"
+                            : "bg-transparent text-[#0e0e32] border-[#0e0e32]"
                             }`}
                         onClick={() => {
                             setActiveTab("onPrem");
@@ -60,8 +61,8 @@ const RedTeamFilterSection = () => {
                     </button>
                     <button
                         className={`px-6 py-3 rounded-full font-semibold border-2 transition-all duration-300 ${activeTab === "azure"
-                                ? "bg-[#0e0e32] text-white border-[#0e0e32]"
-                                : "bg-transparent text-[#0e0e32] border-[#0e0e32]"
+                            ? "bg-[#0e0e32] text-white border-[#0e0e32]"
+                            : "bg-transparent text-[#0e0e32] border-[#0e0e32]"
                             }`}
                         onClick={() => {
                             setActiveTab("azure");

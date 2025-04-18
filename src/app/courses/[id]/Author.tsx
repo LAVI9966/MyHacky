@@ -98,41 +98,30 @@ const Author = ({ course }: TabMenuProps) => {
     ];
     return (
         <div>
-            <div className='p-2'>
+            <div className="p-2">
                 <h2 className="text-3xl font-bold bg-gray-300 px-2 py-1 rounded-xl text-gray-800 mb-4">
-                    Nikhil: Founder of Altered Security, BlackHat USA Trainer, DEF CON Speaker
+                    {course.author.title}
                 </h2>
-
 
                 <div className="flex text-black flex-col md:text-xs text-base md:flex-row gap-4 items-start">
                     <div className="w-full md:w-40 flex-shrink-0">
                         <Image
-                            src="/Assets/Nikhil_image.avif" // make sure this is the badge image on the right
-                            alt="CRTP Badge"
+                            src={course.author.imageUrl}
+                            alt="Author Image"
                             width={160}
                             height={160}
-                            className=" w-full"
+                            className="w-full"
                         />
                     </div>
-                    <div className="flex-1 md:text-xs text-base space-y-4">
-                        <p>
-                            Nikhil Mittal is a hacker, infosec researcher, speaker and enthusiast. His area of interest includes red teaming, Azure and active directory security, attack research, defense strategies and post exploitation research. He has 15+ years of experience in red teaming.
-                        </p>
-                        <p>
-                            He specializes in assessing security risks at secure environments that require novel attack vectors and “out of the box” approach. He has worked extensively on Azure AD, Active Directory attacks, defense and bypassing detection mechanisms.
-                        </p>
-                        <p>
-                            Nikhil has trained more than 10000 security professionals in private trainings and at the world’s top information security conferences.He has spoken/trained at conferences like DEF CON, BlackHat, BruCON and more.
-                        </p>
-                        <p>
-                            He is the founder of Altered Security – a company focusing on hands-on enterprise security learning –
-                            <a href='https://www.alteredsecurity.com/'>
-                                https://www.alteredsecurity.com/
-                            </a>
-                        </p>
+
+                    <div className="flex-1 md:text-sm text-base space-y-4">
+                        {course.author.description.split('\n').map((paragraph, index) => (
+                            <p key={index}>{paragraph}</p>
+                        ))}
                     </div>
                 </div>
             </div>
+
             <div className="bg-gray-50 py-10 px-4">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-6xl mx-auto">
                     {videos.map((video) => (
