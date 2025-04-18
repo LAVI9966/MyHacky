@@ -1,17 +1,6 @@
 'use client'
 import CartContent from "./CartContent"
 
-const sampleCartItems = [
-    {
-        id: '1',
-        title: '(Pre-Launch) CETP : Certified Evasion Techniques Professional',
-        subtitle: 'Access Period: 120 Days',
-        quantity: 1,
-        price: 499.00,
-        imageUrl: '/Assets/activedirectorylab.avif', // Put this in your public folder
-    },
-]
-
 interface CartDrawerProps {
     isOpen: boolean
     onClose: () => void
@@ -24,7 +13,7 @@ export default function CartDrawer({ isOpen, onClose }: CartDrawerProps) {
                 }`}
         >
             {/* Cart Content */}
-            <CartContent onClose={onClose} cartItems={sampleCartItems} />
+            <CartContent onClose={onClose} />
         </div>
     )
 }

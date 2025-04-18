@@ -1,7 +1,8 @@
 'use client'
 
-import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
+import Image from 'next/image'
+import { useRef } from 'react'
 interface CertificationCardProps {
     title: string
     image: string
@@ -15,9 +16,7 @@ export default function CertificationCard({
 
     title,
     image,
-    name,
-    date,
-    studentId,
+
     description,
 }: CertificationCardProps) {
     const ref = useRef(null)
@@ -33,7 +32,7 @@ export default function CertificationCard({
         >
             <div className="rounded-2xl bg-[#1c2a38] text-white p-4 max-w-md ">
                 <div className="rounded-xl overflow-hidden">
-                    <img src={image} alt={title} className="w-full" />
+                    <Image src={image} alt={title} width={100} height={100} className="w-full" />
                 </div>
                 <div className="mt-4 text-center">
                     <h2 className="text-[20px] font-bold text-[#0EC9AC]">{title}</h2>

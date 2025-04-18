@@ -57,58 +57,7 @@ interface TabMenuProps {
 }
 
 const Evasion_Lab = ({ course }: TabMenuProps) => {
-    const cards = [
-        {
-            title: "On Demand Lab",
-            duration: "30 DAYS LAB ACCESS",
-            extras: ["LIFE TIME ACCESS TO COURSE MATERIAL", "ONE CERTIFICATION EXAM ATTEMPT"],
-            price: "$249"
-        },
-        {
-            title: "On Demand Lab",
-            duration: "60 DAYS LAB ACCESS",
-            extras: ["LIFE TIME ACCESS TO COURSE MATERIAL", "ONE CERTIFICATION EXAM ATTEMPT"],
-            price: "$379"
-        },
-        {
-            title: "On Demand Lab",
-            duration: "90 DAYS LAB ACCESS",
-            extras: ["LIFE TIME ACCESS TO COURSE MATERIAL", "ONE CERTIFICATION EXAM ATTEMPT"],
-            price: "$499"
-        },
-        {
-            title: "Extension",
-            duration: "30 DAYS LAB EXTENSION",
-            extras: ["ONE COMPLEMENTARY EXAM ATTEMPT"],
-            price: "$199"
-        },
-        {
-            title: "Reattempt",
-            duration: "EXAM REATTEMPT",
-            extras: [],
-            price: "$99"
-        },
-        {
-            title: "",
-            duration: "Exam Reattempt is only for existing or past students of this course who have already purchased this course in the past.",
-            extras: [],
-            price: ""
-        }
-    ];
-    const cards2 = [
-        {
-            title: "Extension",
-            duration: "30 DAYS LAB ACCESS FOR CERT RENEWAL",
-            extras: ["ONE COMPLEMENTARY EXAM ATTEMPT"],
-            price: "$149"
-        },
-        {
-            title: "Reattempt",
-            duration: "ADDITIONAL RENEWAL EXAM",
-            extras: [],
-            price: "$29"
-        },
-    ];
+
     return (<>
         <div className="flex flex-col items-center justify-center  bg-white space-y-10">
             <div className="max-w-6xl bg-gray-100 w-full">

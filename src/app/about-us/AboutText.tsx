@@ -1,7 +1,6 @@
 "use client";
-import Image from "next/image";
 import { motion } from "framer-motion";
-import TopWave from "@/components/TopWave";
+import Image from "next/image";
 const AboutText = () => {
     return (<>
         <section className="bg-[#01142D] text-white py-16 px-6 md:px-20">

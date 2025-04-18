@@ -20,7 +20,7 @@ const RedTeamFilterSection = () => {
         selectedBootcamp,
         setSelectedBootcamp,
         resetFilters,
-        filteredProducts, // now available here
+        // filteredProducts, // now available here
         loading,
         error,
     } = useFilter();

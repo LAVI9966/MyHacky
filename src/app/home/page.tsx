@@ -1,10 +1,8 @@
 'use client'
-import React from 'react'
-import ReadTeamLabs from './ReadTeamLabs'
-import FilterSection from './FilterSection'
-import CourseCard from './CourseCard'
 import Image from 'next/image'
-import CartButton from '@/components/CartButton'
+import CourseCard from './CourseCard'
+import FilterSection from './FilterSection'
+import ReadTeamLabs from './ReadTeamLabs'
 
 const page = () => {
 

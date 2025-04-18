@@ -1,8 +1,6 @@
-import React from 'react'
-import AboutUsBanner from './AboutUsBanner'
 import AboutText from './AboutText'
+import AboutUsBanner from './AboutUsBanner'
 import ExpertsSection from './ExpertsSection'
-import TopWave from '@/components/TopWave'
 
 const page = () => {
     return (

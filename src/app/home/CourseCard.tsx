@@ -8,7 +8,6 @@ import { useCart } from '@/Context/CartContext';
 const PopupModal = ({
     isVisible,
     onClose,
-    onGoToCart,
 }: {
     isVisible: boolean;
     onClose: () => void;
@@ -132,11 +131,11 @@ const SingleCourseCard = ({ course }: { course: Course }) => {
 
     const handleClose = () => setShowModal(false);
 
-    const accessOptions = course.courseDetails.accessPeriod.map(
-        (period) => `${period.days} Days - ₹${period.price}`
-    );
+    // const accessOptions = course.courseDetails.accessPeriod.map(
+    //     (period) => `${period.days} Days - ₹${period.price}`
+    // );
 
-    const selectedAccessValue = accessOptions.find((opt, idx) => course.courseDetails.accessPeriod[idx]._id === accessPeriod) || accessOptions[0];
+    // const selectedAccessValue = accessOptions.find((opt, idx) => course.courseDetails.accessPeriod[idx]._id === accessPeriod) || accessOptions[0];
 
     return (
         <div className="max-w-4xl mx-auto border border-teal-300 rounded-xl p-6 shadow-md bg-white space-y-6 mb-8">

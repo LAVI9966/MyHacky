@@ -2,18 +2,52 @@
 import React, { createContext, useContext, useState, useEffect } from "react";
 import axios from "axios";
 
-// Product Type (based on your API response structure)
-interface Product {
+// Updated Course Type with specific structure
+interface Course {
     _id: string;
     title: string;
     category: string;
     prices: string;
     bootcampAvailability: string;
-    courseDetails: any;
-    author: any;
+    courseDetails: {
+        overview: string;
+        accessPeriod: {
+            days: string;
+            price: string;
+            _id: string;
+        }[];
+        gcbLab: {
+            image: string;
+            labs: {
+                title: string;
+                description: string;
+                imageUrl: string;
+                _id: string;
+            }[];
+        };
+        onDemandLab: {
+            title: string;
+            price: string;
+            _id: string;
+        }[];
+    };
+    author: {
+        title: string;
+        description: string;
+        imageUrl: string;
+    };
     termsAndConditions: string[];
-    howLearn: any[];
-    certification: any[];
+    howLearn: {
+        title: string;
+        points: string[];
+        _id: string;
+    }[];
+    certification: {
+        title: string;
+        description: string;
+        image: string;
+        _id: string;
+    }[];
     createdAt: string;
     updatedAt: string;
     __v: number;
@@ -30,8 +64,8 @@ interface FilterContextType {
     setSelectedBootcamp: (val: string) => void;
     resetFilters: () => void;
 
-    // New global state values
-    filteredProducts: Product[];
+    // Updated to use Course type instead of Product
+    filteredProducts: Course[];
     loading: boolean;
     error: string | null;
 }
@@ -45,8 +79,8 @@ export const FilterProvider = ({ children }: { children: React.ReactNode }) => {
     const [selectedDiscount, setSelectedDiscount] = useState("all_prices");
     const [selectedBootcamp, setSelectedBootcamp] = useState("all_bootcamps");
 
-    // New: filtered product data
-    const [filteredProducts, setFilteredProducts] = useState<Product[]>([]);
+    // Updated: filtered course data with specific Course type
+    const [filteredProducts, setFilteredProducts] = useState<Course[]>([]);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState<string | null>(null);
 

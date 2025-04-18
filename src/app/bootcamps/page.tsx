@@ -1,5 +1,3 @@
-import React from 'react'
-import Image from 'next/image'
 import BootcampBanner from './BootcampBanner'
 import LiveBootcamps from './LiveBootcamps'
 import PastBootcamp from './PastBootcamp'

@@ -89,7 +89,7 @@ export default function TabMenu({ course }: TabMenuProps) {
             tab: 'Purchase Options'
         },
         {
-            component: <Contact course={course} />,
+            component: <Contact />,
             tab: 'Contact'
         },
     ];
@@ -114,7 +114,7 @@ export default function TabMenu({ course }: TabMenuProps) {
             activeTabContent = <Purchase_Options course={course} />;
             break;
         case 'Contact':
-            activeTabContent = <Contact course={course} />;
+            activeTabContent = <Contact />;
             break;
         default:
             activeTabContent = <Evasion_Lab course={course} />;

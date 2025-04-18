@@ -80,7 +80,7 @@ const Checkout: React.FC = () => {
 
                         <div className="mb-6">
                             <div className="flex items-center gap-2 mb-2">
-                                <img src="/razorpay-logo.png" alt="Razorpay" className="h-6" />
+                                {/* <img src="/razorpay-logo.png" alt="Razorpay" className="h-6" /> */}
                                 <span className="font-semibold text-black">Pay by Razorpay</span>
                             </div>
                             <p className="text-black text-sm">
@@ -160,7 +160,7 @@ const Checkout: React.FC = () => {
 
                         <div className="mb-6">
                             <div className="flex items-center gap-2 mb-2">
-                                <img src="/razorpay-logo.png" alt="Razorpay" className="h-6" />
+                                {/* <img src="/razorpay-logo.png" alt="Razorpay" className="h-6" /> */}
                                 <span className="font-semibold text-black">Pay by Razorpay</span>
                             </div>
                             <p className="text-black text-sm">
