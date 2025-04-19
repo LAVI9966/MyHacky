@@ -81,19 +81,21 @@ const Evasion_Lab = ({ course }: TabMenuProps) => {
                             <p className="text-black md:text-sm text-base p-1 pt-3 md:mr-2">
                                 {lab.description}
                             </p>
-                            <div className="flex-shrink-0 p-1 m-2 flex justify-center">
-                                <Image
-                                    src={lab.imageUrl}
-                                    alt={lab.title}
-                                    width={150}
-                                    height={150}
-                                    className="h-35"
-                                />
-                            </div>
+
+                            {lab.imageUrl && (
+                                <div className="flex-shrink-0 p-1 m-2 flex justify-center">
+                                    <Image
+                                        src={lab.imageUrl}
+                                        alt={lab.title}
+                                        width={150}
+                                        height={150}
+                                        className="h-35"
+                                    />
+                                </div>
+                            )}
                         </div>
                     </div>
                 ))}
-
 
             </div>
             <div className="max-w-6xl w-full bg-white p-2 md:p-2 rounded-xl  gap-6">

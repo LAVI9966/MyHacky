@@ -58,7 +58,7 @@ interface TabMenuProps {
 
 const Certification = ({ course }: TabMenuProps) => {
     return (
-        <div className="bg-white md:p-2 p-2 rounded-lg  text-gray-800 space-y-10 max-w-4xl mx-auto text-sm">
+        <div className="bg-white md:p-2 p-2 rounded-lg text-gray-800 space-y-10 max-w-4xl mx-auto text-sm">
             {course.certification.map((cert) => (
                 <div key={cert._id}>
                     <h2 className="text-3xl font-bold bg-gray-300 px-2 py-1 rounded-xl text-gray-800 mb-4">
