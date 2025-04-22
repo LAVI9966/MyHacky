@@ -6,6 +6,7 @@ import Footer from "@/components/Footer"
 import CartButton from "@/components/CartButton";
 import { FilterProvider } from "@/Context/FilterContext";
 import { CartProvider } from "@/Context/CartContext";
+import Script from "next/script";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -40,6 +41,7 @@ export default function RootLayout({
           </FilterProvider>
         </CartProvider>
         <Footer />
+        <Script src="https://checkout.razorpay.com/v1/checkout.js" strategy="lazyOnload" />
       </body>
     </html>
   );
