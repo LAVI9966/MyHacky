@@ -1,5 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
+
+import LevelTabs from './LevelTabs'
 const page = () => {
     return (
         <div>
@@ -12,7 +14,10 @@ const page = () => {
                     className='w-full'
                 />
             </div>
+
+            <LevelTabs></LevelTabs>
         </div>
+
     )
 }
 

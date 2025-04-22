@@ -27,7 +27,7 @@ const JobOpenings = () => {
                     return (
                         <div key={index} className="relative overflow-hidden">
                             <motion.div
-                                initial={{ opacity: 0, x: isLeft ? -500 : 500 }}
+                                initial={{ opacity: 0, x: isLeft ? -50 : 50 }}
                                 whileInView={{ opacity: 1, x: 0 }}
                                 transition={{ duration: 0.8, ease: 'easeOut' }}
                                 viewport={{ once: true }}

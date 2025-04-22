@@ -20,7 +20,7 @@ export default function ContactForm() {
                 className="w-full max-w-5xl space-y-6"
             >
                 <motion.div
-                    initial={{ opacity: 0, x: -500 }}
+                    initial={{ opacity: 0, x: -50 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.8, ease: 'easeOut' }}
                     viewport={{ once: true }}
