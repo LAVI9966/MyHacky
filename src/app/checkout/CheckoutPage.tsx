@@ -7,6 +7,7 @@ const Checkout: React.FC = () => {
   const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("");
   const { cart, clearCart } = useCart();
+
   const baseurl = process.env.NEXT_PUBLIC_BASE_URL;
   const subtotal = cart.reduce(
     (sum, item) => sum + item.price * item.quantity,
@@ -17,13 +18,30 @@ const Checkout: React.FC = () => {
 
   const handlePlaceOrder = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Order placed", { fullName, email, orderItems: cart, total });
+    if (!fullName || !email) {
+      alert("Please fill in all required fields.");
+      return;
+    }
+   
     const orderPayload = {
       fullName,
       email,
       orderItems: cart,
       total,
     };
+    const transformedPayload = {
+      items: cart.map((item) => ({
+        product: item.id, // using 'id' as the product reference
+        quantity: item.quantity,
+        amount: item.price * item.quantity,
+      })),
+      totalAmount: cart.reduce(
+        (sum, item) => sum + item.price * item.quantity,
+        0
+      ),
+    };
+    console.log("Transformed Payload", transformedPayload);
+
     const razorpayKeyResponse = await axios.get(
       `${baseurl}/api/v1/order/getkey`
     );
@@ -34,13 +52,14 @@ const Checkout: React.FC = () => {
       orderPayload
     );
     const { order } = data;
+
     const options = {
       key,
       amount: order.amount,
       currency: "INR",
       name: "hacky",
       description: "Order Payment",
-      image: "/logo.svg",
+      image: "/Assets/logo.png",
       order_id: order.id,
       theme: {
         color: "#6366f1",
@@ -57,6 +76,21 @@ const Checkout: React.FC = () => {
           );
 
           if (verifyRes.data.success) {
+            const checkoutRes = await axios.post(
+              `${process.env.NEXT_PUBLIC_BASE_URL}/api/v1/checkout`,
+              transformedPayload
+            );
+            console.log("Checkout response:", checkoutRes.data);
+            const orderId = await checkoutRes.data.data._id;
+            const cheoutuserRes = await axios.post(
+              `${process.env.NEXT_PUBLIC_BASE_URL}/api/v1/checkout/user`,
+              {
+                name: fullName,
+                email: email,
+                order: orderId,
+              }
+            );
+
             alert("Payment successful!");
             clearCart();
 

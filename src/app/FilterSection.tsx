@@ -34,7 +34,7 @@ const RedTeamFilterSection = () => {
                     const titles = response.data.data.map((product: { title: string }) => product.title);
                     setProductTitles(titles);
                 }
-                console.log(response)
+               
             } catch (error) {
                 console.log("Error fetching titles:", error);
             }

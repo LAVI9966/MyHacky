@@ -62,7 +62,6 @@ const Page = () => {
 
     useEffect(() => {
         if (!id) return;  // Add early return if ID is not present
-        console.log(id)
         const fetchCourse = async () => {
             try {
                 const response = await axios.get(

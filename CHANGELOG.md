@@ -33,4 +33,4 @@ All notable changes to this project will be documented in this file.
 
 ### Change 2025-04-23
 - Fixed Add to cart buttons 
-- 
+- added checkout order and verify and update status
