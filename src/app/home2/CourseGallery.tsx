@@ -11,7 +11,7 @@ const coursesData = [
         title: '(Pre-Launch) CETP : Certified Evasion Techniques Professional',
         rating: 5,
         priceRange: '₹199.00 - ₹499.00',
-        image: '/api/placeholder/500/300'
+        image: '/Assets/AAD.avif'
     },
     {
         id: 2,
@@ -19,7 +19,7 @@ const coursesData = [
         title: 'Fundamentals of Cybersecurity',
         rating: 4,
         priceRange: '₹149.00 - ₹399.00',
-        image: '/api/placeholder/500/300'
+        image: '/Assets/AAD.avif'
     },
     {
         id: 3,
@@ -27,7 +27,7 @@ const coursesData = [
         title: 'Penetration Testing Masterclass',
         rating: 5,
         priceRange: '₹299.00 - ₹599.00',
-        image: '/api/placeholder/500/300'
+        image: '/Assets/AAD.avif'
     },
     {
         id: 4,
@@ -35,7 +35,7 @@ const coursesData = [
         title: 'Network Security Essentials',
         rating: 4,
         priceRange: '₹199.00 - ₹449.00',
-        image: '/api/placeholder/500/300'
+        image: '/Assets/AAD.avif'
     }
 ];
 

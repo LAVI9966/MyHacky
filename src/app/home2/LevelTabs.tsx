@@ -22,7 +22,7 @@ export default function LevelTabs() {
     };
 
     return (
-        <div className="bg-[#001123] p-4 max-w-6xl mx-auto">
+        <div className="bg-[#001836] p-4 max-w-6xl mx-auto">
             <div className="grid grid-cols-3 gap-px">
                 {levels.map((level) => (
                     <button
