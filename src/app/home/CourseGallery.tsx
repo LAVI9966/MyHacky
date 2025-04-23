@@ -44,11 +44,12 @@ const CourseCard = ({ course }) => {
         <div className="flex flex-col md:flex-row border border-gray-300 rounded-lg p-4 md:p-6 bg-white shadow-sm mb-6">
             {/* Left Half */}
             <div className="w-full md:w-1/2 pr-0 md:pr-8 flex flex-col justify-center items-center text-left mb-4 md:mb-0">
-                <p className="text-sm text-gray-500 mb-2">{course.level}</p>
+                <a href='/product/product-category' className="text-sm text-gray-500 mb-2">{course.level}</a>
 
-                <h2 className="text-xl font-bold text-gray-800 hover:text-amber-700 cursor-pointer text-center leading-snug mb-3">
+
+                <a className="text-xl font-bold text-gray-800 hover:text-amber-700 cursor-pointer text-center leading-snug mb-3" href='/product'>
                     {course.title}
-                </h2>
+                </a>
 
                 {/* Stars */}
                 <div className="flex items-center gap-1 text-orange-500 mb-2">
@@ -66,9 +67,9 @@ const CourseCard = ({ course }) => {
                 <p className="text-base font-semibold text-black mb-4">{course.priceRange}</p>
 
                 {/* Button */}
-                <button className="bg-amber-700 text-white font-semibold rounded-full px-6 py-2 flex items-center gap-2 w-fit border border-transparent hover:bg-white hover:text-amber-700 hover:border-amber-700 transition-colors duration-200">
+                <a href='/product' className="bg-amber-700 text-white font-semibold rounded-full px-6 py-2 flex items-center gap-2 w-fit border border-transparent hover:bg-white hover:text-amber-700 hover:border-amber-700 transition-colors duration-200">
                     ✅ Access Now
-                </button>
+                </a>
             </div>
 
             {/* Right Half */}

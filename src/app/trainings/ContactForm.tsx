@@ -81,7 +81,7 @@ const ContactForm: React.FC = () => {
 
                 <button
                     type="submit"
-                    className="bg-[#0EC9AC] text-white font-semibold w-full py-3 rounded hover:opacity-90 transition"
+                    className="bg-[#0EC9AC] cursor-pointer text-white font-semibold w-full py-3 rounded hover:opacity-90 transition"
                 >
                     Submit
                 </button>

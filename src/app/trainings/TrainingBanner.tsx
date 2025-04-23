@@ -1,8 +1,13 @@
 "use client";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { useRouter } from 'next/navigation';
 
 const TrainingBanner = () => {
+    const router = useRouter();
+    const handleClick = () => {
+        router.push('/contact');
+    }
     return (
         <div className="relative w-full h-[400px] overflow-hidden ">
             {/* Background Image */}
@@ -41,7 +46,7 @@ const TrainingBanner = () => {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.9, ease: "easeOut", delay: 0.3 }}
                 >
-                    <button className="bg-[#0EC9AC] rounded-lg px-3 py-3">
+                    <button onClick={handleClick} className="bg-[#0EC9AC] cursor-pointer rounded-lg px-3 py-3">
                         Contact us
                     </button>
                 </motion.div>

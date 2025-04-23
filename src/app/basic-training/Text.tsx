@@ -4,7 +4,7 @@ const Text = () => {
     return (
         <div className='w-full bg-[#1F283B]'>
             <div className="w-full bg-[#1F283B] px-4 sm:px-6 lg:px-8 py-8 max-w-7xl mx-auto">
-                <p className="text-white leading-relaxed text-sm sm:text-xl">
+                <div className="text-white leading-relaxed text-sm sm:text-xl">
                     Enterprises are managed using Active Directory (AD) and it often forms the backbone of the complete enterprise network. Therefore, to secure an enterprise from an adversary, it is inevitable to secure its AD environment. To secure AD, you must understand different techniques and attacks used by adversaries against it. Often burdened with maintaining backward compatibility and interoperability with a variety of products, AD environments lack ability to tackle latest threats.
                     <br /><br />
                     This training is aimed towards attacking modern AD Environment using built-in tools like PowerShell and other trusted OS resources. The training is based on real world penetration tests and Red Team engagements for highly secured environments.
@@ -67,7 +67,7 @@ const Text = () => {
                     <ol className="list-decimal list-inside mt-2 ml-4">
                         <li>System with 4 GB RAM and ability to install OpenVPN client and RDP to Windows boxes.</li>
                     </ol>
-                </p>
+                </div>
             </div>
         </div>
     );

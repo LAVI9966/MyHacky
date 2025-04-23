@@ -33,7 +33,7 @@ export default function EnrollCard() {
                             <strong>Starts:</strong> 1st February 2025 <strong>Duration:</strong> 4 weeks<br />
                             Recordings of live sessions included!
                         </p>
-                        <button className="bg-red-500 hover:bg-red-600 text-white font-semibold px-6 py-3 rounded shadow-lg transition">
+                        <button className="bg-red-500 cursor-pointer hover:bg-red-600 text-white font-semibold px-6 py-3 rounded shadow-lg transition">
                             Enroll Now
                         </button>
                     </div>

@@ -41,7 +41,7 @@ const TrainingCalendar: React.FC = () => {
                     at NULLCON Goa<br />
                     26-28 February 2025
                 </p>
-                <button className="bg-[#0EC9AC] text-white font-semibold px-6 py-3 rounded w-full hover:opacity-90 transition">
+                <button className="bg-[#0EC9AC] cursor-pointer text-white font-semibold px-6 py-3 rounded w-full hover:opacity-90 transition">
                     Contact Us
                 </button>
             </motion.div>

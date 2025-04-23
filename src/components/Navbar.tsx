@@ -26,7 +26,7 @@ const Navbar = () => {
                             <Image src='/Assets/logo.png' alt='logo' width={100} height={100} />
                         </Link>
                     </li>
-                    <li className='transform transition-transform duration-200 hover:scale-110'><a className="transform transition-transform duration-200 hover:scale-110 hover:text-white" href="/home">Courses</a></li>
+                    <li className='transform transition-transform duration-200 hover:scale-110'><a className="transform transition-transform duration-200 hover:scale-110 hover:text-white" href="/">Courses</a></li>
                     <li className='transform transition-transform duration-200 hover:scale-110'><a className="transform transition-transform duration-200 hover:scale-110 hover:text-white" href="/bootcamps">Bootcamps</a></li>
                     <a className="transform transition-transform duration-200 hover:scale-110 hover:text-white" href="/certifications">Certifications</a>
 
@@ -73,7 +73,7 @@ const Navbar = () => {
                 {isOpen && (
                     <div className="absolute top-full left-0 w-full bg-white flex flex-col items-start  space-y-4 py-6 md:hidden z-30 border-t border-gray-700">
                         <div className='w-full border-b-1 pl-4 pb-4'>
-                            <a className="transform transition-transform duration-200  hover:scale-110 text-black" href="/home">Courses</a>
+                            <a className="transform transition-transform duration-200  hover:scale-110 text-black" href="/">Courses</a>
                         </div>
                         <div className='w-full border-b-1 pl-4 pb-4'>
 

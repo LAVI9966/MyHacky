@@ -7,42 +7,42 @@ const tools = [
         title: 'Red Labs (BETA)',
         description: 'FREE labs to sharpen your skills',
         buttonLabel: 'Try It',
-        buttonLink: '#',
+        buttonLink: 'https://redlabs.enterprisesecurity.io/',
         bgBlack: false,
     },
     {
         title: 'Nishang',
         description: 'Using PowerShell for Penetration Testing',
         buttonLabel: 'View More',
-        buttonLink: '#',
+        buttonLink: 'https://github.com/samratashok/nishang',
         bgBlack: true,
     },
     {
         title: 'RACE',
         description: 'Execute ACL attacks and backdoors',
         buttonLabel: 'View More',
-        buttonLink: '#',
+        buttonLink: 'https://github.com/samratashok/RACE',
         bgBlack: false,
     },
     {
         title: 'Deploy-Deception',
         description: 'Deploy active directory decoy objects',
         buttonLabel: 'View More',
-        buttonLink: '#',
+        buttonLink: 'https://github.com/samratashok/Deploy-Deception',
         bgBlack: true,
     },
     {
         title: 'Kautilya',
         description: 'Pwnage with Human Interface Devices',
         buttonLabel: 'View More',
-        buttonLink: '#',
+        buttonLink: 'https://github.com/samratashok/Kautilya',
         bgBlack: false,
     },
     {
         title: '365-Stealer',
         description: 'Check user awareness for Illicit Consent Grant attacks',
         buttonLabel: 'View More',
-        buttonLink: '#',
+        buttonLink: 'https://github.com/AlteredSecurity/365-Stealer',
         bgBlack: true,
     },
 ];
@@ -98,7 +98,7 @@ const CommunityTools: React.FC = () => {
                                 href={tool.buttonLink}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="bg-[#0EC9AC] text-black font-bold px-6 py-2 rounded hover:opacity-90 transition w-fit mx-auto"
+                                className="bg-[#0EC9AC]  font-bold px-6 py-2 rounded hover:opacity-90 text-white hover:text-black hover:bg-white transition w-fit mx-auto"
                             >
                                 {tool.buttonLabel} &nbsp;›
                             </a>

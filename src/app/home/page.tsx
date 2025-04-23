@@ -3,6 +3,7 @@ import Image from 'next/image'
 
 import LevelTabs from './LevelTabs'
 import TimerCard from './TimerCard'
+import AllUsers from './Allusers'
 const page = () => {
     return (
         <div className='w-full bg-[#01152C]'>
@@ -23,6 +24,7 @@ const page = () => {
 
                 <LevelTabs></LevelTabs>
             </div>
+
         </div>
 
     )
