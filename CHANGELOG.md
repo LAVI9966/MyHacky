@@ -27,3 +27,7 @@ All notable changes to this project will be documented in this file.
 
 ## [1.0.0] - 2025-04-17
 
+
+### Added 2025-04-22
+- Implemented User Checkout Process and razor pay
+
