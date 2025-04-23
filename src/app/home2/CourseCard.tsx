@@ -1,14 +1,37 @@
 "use client";
 import React, { useState } from "react";
 import { motion } from "framer-motion";
+import Image from "next/image";
+import { useEffect } from "react";
 
 export default function CourseCard() {
     const [hovered, setHovered] = useState(false);
 
+    useEffect(() => {
+        // Add the keyframes for the shine animation to the document
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes shine {
+                0% {
+                    transform: translateX(-100%);
+                }
+                100% {
+                    transform: translateX(100%);
+                }
+            }
+        `;
+        document.head.appendChild(style);
+
+        return () => {
+            // Clean up the style element when component unmounts
+            document.head.removeChild(style);
+        };
+    }, []);
+
     const course = {
         level: "Beginner",
         title: "CRTP : Attacking and Defending Active Directory Lab",
-        image: "/Assets/AAA.avif",
+        image: "/Assets/AAD.avif",
         reviews: 0,
         description:
             "This lab is designed to provide a platform for security professionals to understand, analyze and practice threats and attacks in a modern Active Directory environment. The lab is beginner friendly and comes with multiple learning aids that include video course, slides and multiple lab manuals.",
@@ -20,12 +43,29 @@ export default function CourseCard() {
             onMouseEnter={() => setHovered(true)}
             onMouseLeave={() => setHovered(false)}
         >
-            {/* Image */}
-            <img
-                src={course.image}
-                alt={course.title}
-                className="w-full rounded-md"
-            />
+            {/* Image with shine effect */}
+            <div className="relative w-full overflow-hidden rounded-md">
+                {/* Shine overlay - only appears when hovered */}
+                {hovered && (
+                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent opacity-30 z-10 
+                        -translate-x-full animate-shine"
+                        style={{
+                            animation: "shine 1s ease forwards"
+                        }} />
+                )}
+
+                {/* Next.js Image component */}
+                <div className="relative w-full ">
+                    <Image
+                        src={course.image}
+                        alt={course.title}
+                        width={100}
+                        height={100}
+                        className="h-80 w-full object-cover rounded-md"
+                        priority
+                    />
+                </div>
+            </div>
 
             {/* Level */}
             <div className="text-sm text-gray-300 mt-3 underline">

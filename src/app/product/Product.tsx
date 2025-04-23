@@ -68,8 +68,9 @@ export default function Product() {
             </div>
 
             {/* Tabs Section */}
-            <div className="  max-w-6xl mx-auto px-6 mt-10">
-                <div className="flex flex-col text-left space-x-6 border-b border-gray-300">
+            <div className="max-w-6xl mx-auto px-6 mt-10">
+                {/* Fixed: Changed flex-col to flex-row for desktop, but keeping flex-col for mobile using flex-col sm:flex-row */}
+                <div className="flex flex-col sm:flex-row border-b border-gray-300">
                     {[
                         { key: "description", label: "Description" },
                         { key: "additional", label: "Additional information" },
@@ -77,9 +78,9 @@ export default function Product() {
                     ].map((tab) => (
                         <button
                             key={tab.key}
-                            className={`pb-2 text-left my-2 border-b-3 font-semibold text-sm transition-colors duration-200 ${activeTab === tab.key
-                                ? "border-purple-800 text-gray-600"
-                                : "border-transparent text-gray-600 hover:text-blue-600"
+                            className={`pb-2 px-4 text-left mb-2 sm:mb-0 font-semibold text-sm transition-colors duration-200 ${activeTab === tab.key
+                                    ? "border-b-2 border-purple-800 text-gray-800"
+                                    : "border-transparent text-gray-600 hover:text-blue-600"
                                 }`}
                             onClick={() => setActiveTab(tab.key)}
                         >
@@ -89,7 +90,7 @@ export default function Product() {
                 </div>
 
                 <div className="mt-6 text-gray-700">
-                    {activeTab === "description" && <p>Global Central Bank (GCB) is a one of a kind Enterprise Windows and Active Directory Cyber Range. It helps enterprises test capabilities of both their Red and Blue teams in an Enterprise Windows network. GCB is a true multi-forest environment that mimics a financial institution’s network.</p>}
+                    {activeTab === "description" && <p>Global Central Bank (GCB) is a one of a kind Enterprise Windows and Active Directory Cyber Range. It helps enterprises test capabilities of both their Red and Blue teams in an Enterprise Windows network. GCB is a true multi-forest environment that mimics a financial institution's network.</p>}
 
                     {activeTab === "additional" && (
                         <table className="w-full text-left">
@@ -109,7 +110,7 @@ export default function Product() {
                             <p>There are no reviews yet.</p>
                             <div className="border p-6 space-y-4 bg-white rounded shadow-sm">
                                 <h3 className="text-lg font-semibold">
-                                    Be the first to review “CRTM : Global Central Bank”
+                                    Be the first to review "CRTM : Global Central Bank"
                                 </h3>
                                 <p className="text-sm text-gray-500">
                                     Your email address will not be published. Required fields are marked *

@@ -31,3 +31,6 @@ All notable changes to this project will be documented in this file.
 ### Added 2025-04-22
 - Implemented User Checkout Process and razor pay
 
+### Change 2025-04-23
+- Fixed Add to cart buttons 
+- 
