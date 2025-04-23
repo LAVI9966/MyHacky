@@ -1,6 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
-import ContactUs from './Contact'
+import ContactUs from './Contact' // Keep importing from the same file
 
 const ContactBanner = () => {
     return (

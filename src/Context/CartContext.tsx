@@ -8,6 +8,7 @@ interface CartItem {
     quantity: number;
     price: number;
     accessId: string;
+    accessDays: string; // Added access period days
     imageUrl: string;
 }
 

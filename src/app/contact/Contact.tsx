@@ -1,6 +1,16 @@
+'use client'
 import { FaFacebookF, FaTwitter, FaYoutube } from "react-icons/fa";
+import { useState, useEffect } from 'react';
 
 export default function ContactUs() {
+    // Add state to manage client-side rendering
+    const [isClient, setIsClient] = useState(false);
+
+    // Use useEffect to mark when client-side rendering happens
+    useEffect(() => {
+        setIsClient(true);
+    }, []);
+
     return (
         <div className="bg-white w-[80%] mx-auto text-black py-10 px-4">
             <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
@@ -8,8 +18,8 @@ export default function ContactUs() {
                 <div>
                     <h1 className="text-[60px] font-bold mb-4">Contact us</h1>
                     <p className="text-gray-600 mb-6 text-[18px]">
-                        Want to get in touch? We’d love to hear from you.<br />
-                        Here’s how you can reach us…
+                        Want to get in touch? We'd love to hear from you.<br />
+                        Here's how you can reach us…
                     </p>
 
                     <h2 className="text-lg  mb-2">Our Email</h2>
@@ -55,11 +65,16 @@ export default function ContactUs() {
 
                     <div>
                         <label className="block font-medium text-sm">Email Address <span className="text-red-500">*</span></label>
-                        <input
-                            type="email"
-                            className="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring focus:border-blue-400"
-                            required
-                        />
+                        {/* Conditionally render email input to avoid hydration mismatch */}
+                        {isClient ? (
+                            <input
+                                type="email"
+                                className="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring focus:border-blue-400"
+                                required
+                            />
+                        ) : (
+                            <div className="w-full border border-gray-300 rounded-md p-2 h-10"></div>
+                        )}
                     </div>
 
                     <div>

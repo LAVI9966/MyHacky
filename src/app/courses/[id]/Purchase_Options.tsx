@@ -111,12 +111,18 @@ const Purchase_Options = ({ course }: TabMenuProps) => {
 
     // Handle adding to cart
     const handleAddToCart = () => {
+        // Find the selected access period object
+        const selectedAccessPeriod = course.courseDetails.accessPeriod.find(p => p._id === accessPeriod);
+
+        if (!selectedAccessPeriod) return;
+
         addToCart({
             id: course._id,
             title: course.title,
             quantity,
-            price: Number(course.courseDetails.accessPeriod.find(p => p._id === accessPeriod)?.price),
+            price: Number(selectedAccessPeriod.price),
             accessId: accessPeriod,
+            accessDays: selectedAccessPeriod.days, // Add the access period days
             imageUrl: course.courseDetails.gcbLab.image || '/Assets/Shield.avif'
         });
         setShowModal(true);

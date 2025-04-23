@@ -37,10 +37,10 @@ export default function RootLayout({
         <CartProvider>
           <FilterProvider>
             {/* Main content area that grows */}
-            <main className="flex-1 relative z-10">
+            <main className="flex-1 relative z-20">
               {children}
-              <CartButton />
             </main>
+            <CartButton />
           </FilterProvider>
         </CartProvider>
 
