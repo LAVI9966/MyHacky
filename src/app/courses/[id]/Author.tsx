@@ -122,7 +122,7 @@ const Author = ({ course }: TabMenuProps) => {
                 </div>
             </div>
 
-            <div className="bg-gray-50 py-10 px-4">
+            {/* <div className="bg-gray-50 py-10 px-4">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-6xl mx-auto">
                     {videos.map((video) => (
                         <div
@@ -151,7 +151,7 @@ const Author = ({ course }: TabMenuProps) => {
                         </div>
                     ))}
                 </div>
-            </div>
+            </div> */}
         </div>
     )
 }

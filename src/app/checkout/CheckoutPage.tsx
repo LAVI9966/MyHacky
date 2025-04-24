@@ -151,7 +151,7 @@ const Checkout: React.FC = () => {
                     id="email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    className="w-full p-2 placeholder-gray-500 pr-10 border-2 border-gray-400 rounded-md focus:outline-none focus:ring-2 focus:ring-[#1a1a85]"
+                    className="w-full p-2 text-black placeholder-gray-500 pr-10 border-2 border-gray-400 rounded-md focus:outline-none focus:ring-2 focus:ring-[#1a1a85]"
                     placeholder="Enter your email address"
                     required
                   />
@@ -220,7 +220,7 @@ const Checkout: React.FC = () => {
             <button
               onClick={handlePlaceOrder}
               disabled={cart.length === 0}
-              className={`w-full ${cart.length === 0
+              className={`cursor-pointer w-full ${cart.length === 0
                 ? "bg-gray-400 cursor-not-allowed"
                 : "bg-[#00008B] hover:bg-[#000070]"
                 } text-white py-3 px-4 rounded-full transition-colors text-lg font-semibold`}

@@ -200,9 +200,58 @@ export default function Product() {
                 {/* Right - Product Details */}
                 <div className="flex-1 space-y-6">
                     <nav className="text-sm text-gray-500">
-                        Home / {course?.category || "Category"} / {course?.title || "Course Title"}
+                        <span
+                            className='cursor-pointer'
+                            onClick={() => {
+                                window.location.href = '/home';
+                            }}
+                        >
+                            Home
+                        </span>
+                        <span
+                            className="cursor-pointer"
+                            onClick={() => {
+                                if (!course) return;
+
+                                // Get the normalized category (lowercase for case insensitivity)
+                                const category = course.category.toLowerCase();
+
+                                // Redirect based on category/level
+                                if (category === 'beginner') {
+                                    window.location.href = '/product/product-category/beginner';
+                                } else if (category === 'intermediate') {
+                                    window.location.href = '/product/product-category/intermediate';
+                                } else if (category === 'advanced') {
+                                    window.location.href = '/product/product-category/advanced';
+                                } else {
+                                    // Fallback to product page if category doesn't match expected values
+                                    window.location.href = '/product';
+                                }
+                            }}>
+                            / {course?.category || "Category"}
+                        </span>
+                        / {course?.title || "Course Title"}
                     </nav>
-                    <h2 className="text-purple-700">{course?.category || "Category"}</h2>
+                    <h2 className="cursor-pointer text-purple-700"
+                        onClick={() => {
+                            if (!course) return;
+
+                            // Get the normalized category (lowercase for case insensitivity)
+                            const category = course.category.toLowerCase();
+
+                            // Redirect based on category/level
+                            if (category === 'beginner') {
+                                window.location.href = '/product/product-category/beginner';
+                            } else if (category === 'intermediate') {
+                                window.location.href = '/product/product-category/intermediate';
+                            } else if (category === 'advanced') {
+                                window.location.href = '/product/product-category/advanced';
+                            } else {
+                                // Fallback to product page if category doesn't match expected values
+                                window.location.href = '/product';
+                            }
+                        }}
+                    >{course?.category || "Category"}</h2>
                     <h1 className="text-2xl text-black font-semibold">{course?.title || "Course Title"}</h1>
                     <p className="text-2xl font-bold text-gray-500">{getPriceRange(course)}</p>
 
@@ -257,7 +306,26 @@ export default function Product() {
                     <div className="text-sm flex gap-3 text-gray-500">
                         <p>SKU: {course?._id?.substring(0, 8) || "N/A"}</p>
                         <p>
-                            Category: <span className="text-purple-700 font-medium">{course?.category || "Category"}</span>
+                            Category: <span
+                                onClick={() => {
+                                    if (!course) return;
+
+                                    // Get the normalized category (lowercase for case insensitivity)
+                                    const category = course.category.toLowerCase();
+
+                                    // Redirect based on category/level
+                                    if (category === 'beginner') {
+                                        window.location.href = '/product/product-category/beginner';
+                                    } else if (category === 'intermediate') {
+                                        window.location.href = '/product/product-category/intermediate';
+                                    } else if (category === 'advanced') {
+                                        window.location.href = '/product/product-category/advanced';
+                                    } else {
+                                        // Fallback to product page if category doesn't match expected values
+                                        window.location.href = '/product';
+                                    }
+                                }}
+                                className="cursor-pointer text-purple-700 font-medium">{course?.category || "Category"}</span>
                         </p>
                     </div>
                 </div>
@@ -269,7 +337,7 @@ export default function Product() {
                     {[
                         { key: "description", label: "Description" },
                         { key: "additional", label: "Additional information" },
-                        { key: "reviews", label: "Reviews (0)" },
+                        // { key: "reviews", label: "Reviews (0)" },
                     ].map((tab) => (
                         <button
                             key={tab.key}
@@ -305,7 +373,7 @@ export default function Product() {
                         </table>
                     )}
 
-                    {activeTab === "reviews" && (
+                    {/* {activeTab === "reviews" && (
                         <div className="space-y-4">
                             <p>There are no reviews yet.</p>
                             <div className="border p-6 space-y-4 bg-white rounded shadow-sm">
@@ -361,7 +429,7 @@ export default function Product() {
                                 </form>
                             </div>
                         </div>
-                    )}
+                    )} */}
                 </div>
             </div>
 

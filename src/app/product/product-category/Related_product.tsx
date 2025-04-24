@@ -1,11 +1,9 @@
 'use client';
 import React, { useState, useEffect } from 'react';
-import { ChevronDown } from 'lucide-react';
-import { SearchCheck } from 'lucide-react';
+import { ChevronDown, SearchCheck, ShoppingBag } from 'lucide-react';
 import Image from 'next/image';
-import { useFilter } from '../../../Context/FilterContext'; // Make sure path matches your project structure
+import { useFilter } from '../../../Context/FilterContext';
 
-// Using the same Course type from FilterContext
 interface Course {
     _id: string;
     title: string;
@@ -59,22 +57,14 @@ interface Course {
 export default function Related_product() {
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
     const [selectedSort, setSelectedSort] = useState('Default sorting');
-
-    // Get the filter context
-    const {
-        allProducts,
-        loading,
-        error
-    } = useFilter();
-
-    // Using allProducts directly - no filtering
+    const { allProducts, loading, error } = useFilter();
 
     const sortOptions = [
         'Default sorting',
         'Sort by popularity',
         'Sort by latest',
         'Sort by price: low to high',
-        'Sort by price: high to low'
+        'Sort by price: high to low',
     ];
 
     const toggleDropdown = () => {
@@ -86,12 +76,25 @@ export default function Related_product() {
         setIsDropdownOpen(false);
     };
 
-    // Show loading state
+    const handleSelectCourse = (product: Course) => {
+        localStorage.setItem('selectedCourse', JSON.stringify(product));
+        window.location.href = '/product';
+    };
+
     if (loading) {
         return (
             <div className="min-h-screen bg-white px-6 md:px-16 py-10 text-[#1c2b36]">
                 <div className="max-w-6xl mx-auto">
-                    <p className="text-sm text-gray-500 mb-2">Home / All Products</p>
+                    <p className="text-sm  text-gray-500 mb-2">
+                        <span
+                            className='cursor-pointer'
+                            onClick={() => {
+                                window.location.href = '/home';
+                            }}
+                        >
+                            Home
+                        </span>
+                        / All Products</p>
                     <h1 className="text-4xl font-bold mb-8">All Products</h1>
                     <div className="flex justify-center items-center h-64">
                         <p className="text-lg">Loading courses...</p>
@@ -101,12 +104,18 @@ export default function Related_product() {
         );
     }
 
-    // Show error state
     if (error) {
         return (
             <div className="min-h-screen bg-white px-6 md:px-16 py-10 text-[#1c2b36]">
                 <div className="max-w-6xl mx-auto">
-                    <p className="text-sm text-gray-500 mb-2">Home / All Products</p>
+                    <p className="text-sm text-gray-500 mb-2"><span
+                        className='cursor-pointer'
+                        onClick={() => {
+                            window.location.href = '/home';
+                        }}
+                    >
+                        Home
+                    </span> / All Products</p>
                     <h1 className="text-4xl font-bold mb-8">All Products</h1>
                     <div className="flex justify-center items-center h-64">
                         <p className="text-lg text-red-500">{error}</p>
@@ -119,7 +128,15 @@ export default function Related_product() {
     return (
         <div className="min-h-screen bg-white px-6 md:px-16 py-10 text-[#1c2b36]">
             <div className="max-w-6xl mx-auto">
-                <p className="text-sm text-gray-500 mb-2">Home / All Products</p>
+                <p className="text-sm text-gray-500 mb-2">
+                    <span
+                        className='cursor-pointer'
+                        onClick={() => {
+                            window.location.href = '/home';
+                        }}
+                    >
+                        Home
+                    </span> / All Products</p>
                 <h1 className="text-4xl font-bold mb-8">All Products</h1>
 
                 <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
@@ -142,7 +159,8 @@ export default function Related_product() {
                                     {sortOptions.map((option, index) => (
                                         <li
                                             key={index}
-                                            className={`px-4 py-2 text-sm cursor-pointer hover:bg-gray-50 ${selectedSort === option ? 'text-blue-600 font-medium' : 'text-gray-700'}`}
+                                            className={`px-4 py-2 text-sm cursor-pointer hover:bg-gray-50 ${selectedSort === option ? 'text-blue-600 font-medium' : 'text-gray-700'
+                                                }`}
                                             onClick={() => selectOption(option)}
                                         >
                                             {option}
@@ -157,8 +175,8 @@ export default function Related_product() {
                 {/* Product Cards */}
                 <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-10">
                     {allProducts.map((product: Course, index: number) => (
-                        <div key={product._id} className="text-center">
-                            <div className="bg-white rounded overflow-hidden shadow-md">
+                        <div key={product._id} className="text-left group">
+                            <div className="bg-white rounded overflow-hidden shadow-md relative">
                                 <div className="relative w-full h-60">
                                     <Image
                                         src={product.courseDetails?.gcbLab?.image || '/Assets/AAD.avif'}
@@ -168,30 +186,29 @@ export default function Related_product() {
                                         className="object-contain"
                                         priority={index === 0}
                                     />
+                                    <div
+                                        className="absolute top-2 right-2 bg-white rounded-full p-2 opacity-0 group-hover:opacity-100 transition-opacity shadow"
+                                        onClick={() => handleSelectCourse(product)}
+                                    >
+                                        <ShoppingBag className="w-5 h-5 text-[#1c2b36] cursor-pointer" />
+                                    </div>
                                 </div>
                                 <div className="py-4 px-2">
                                     <p className="text-sm text-gray-500 mb-1">{product.category}</p>
                                     <h3 className="text-base font-medium mb-1">{product.title}</h3>
-                                    <div className="flex justify-center mb-1">
-                                        {/* Standard 5-star rating */}
+                                    <div className="flex justify-left mb-1">
                                         {Array.from({ length: 5 }).map((_, i) => (
-                                            <svg key={i} className="w-4 h-4 fill-current text-yellow-400" viewBox="0 0 20 20">
+                                            <svg key={i} className="w-4 h-4 fill-current text-gray-600" viewBox="0 0 20 20">
                                                 <path d="M10 15l-5.878 3.09 1.122-6.545L.489 6.91l6.567-.955L10 0l2.944 5.955 6.567.955-4.755 4.635 1.122 6.545z" />
                                             </svg>
                                         ))}
                                     </div>
-                                    <p className="text-base font-semibold text-[#1c2b36] mb-4">{product.prices}</p>
+                                    <p className="text-lg font-semibold text-gray-600 mb-4">₹199.00 – ₹499.00</p>
+                                    {/* <p className="text-base font-semibold text-[#1c2b36] mb-4">{product.prices}</p> */}
                                     <button
-                                        onClick={() => {
-                                            if (product) {
-                                                // Store the entire course object in localStorage
-                                                localStorage.setItem('selectedCourse', JSON.stringify(product));
-
-                                                // Redirect to product page
-                                                window.location.href = '/product';
-                                            }
-                                        }}
-                                        className="cursor-pointer bg-yellow-400 hover:bg-yellow-300 transition font-semibold py-2 px-6 rounded-full text-[#1c2b36]">
+                                        onClick={() => handleSelectCourse(product)}
+                                        className="cursor-pointer bg-yellow-400 hover:bg-yellow-300 transition font-semibold py-2 px-6 rounded-full text-[#1c2b36]"
+                                    >
                                         Select options
                                     </button>
                                 </div>
@@ -200,7 +217,6 @@ export default function Related_product() {
                     ))}
                 </div>
 
-                {/* Show message if no products found */}
                 {allProducts.length === 0 && (
                     <div className="mt-12 flex justify-center">
                         <p className="text-lg text-gray-600">No products found.</p>
