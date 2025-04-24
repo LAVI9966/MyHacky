@@ -66,6 +66,7 @@ interface FilterContextType {
 
     // Updated to use Course type instead of Product
     filteredProducts: Course[];
+    allProducts: Course[]; // New state for all products without filters
     loading: boolean;
     error: string | null;
 }
@@ -81,6 +82,7 @@ export const FilterProvider = ({ children }: { children: React.ReactNode }) => {
 
     // Updated: filtered course data with specific Course type
     const [filteredProducts, setFilteredProducts] = useState<Course[]>([]);
+    const [allProducts, setAllProducts] = useState<Course[]>([]); // New state for all products
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState<string | null>(null);
 
@@ -90,6 +92,28 @@ export const FilterProvider = ({ children }: { children: React.ReactNode }) => {
         setSelectedDiscount("all_prices");
         setSelectedBootcamp("all_bootcamps");
     };
+
+    // Fetch all products once on component mount
+    useEffect(() => {
+        const fetchAllProducts = async () => {
+            setLoading(true);
+            setError(null);
+
+            try {
+                const fullUrl = `${process.env.NEXT_PUBLIC_BASE_URL}/api/v1/products`;
+                const response = await axios.get(fullUrl);
+                const products = response.data?.data || [];
+                setAllProducts(products);
+            } catch (err) {
+                console.error("Error fetching all products:", err);
+                setError("Failed to fetch all products.");
+            } finally {
+                setLoading(false);
+            }
+        };
+
+        fetchAllProducts();
+    }, []);
 
     // Fetch products whenever filter values change
     useEffect(() => {
@@ -134,6 +158,7 @@ export const FilterProvider = ({ children }: { children: React.ReactNode }) => {
                 setSelectedBootcamp,
                 resetFilters,
                 filteredProducts,
+                allProducts, // Added new state to the context
                 loading,
                 error,
             }}

@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { ChevronDown } from 'lucide-react';
 import { SearchCheck } from 'lucide-react';
 import Image from 'next/image';
-import { useFilter } from '../../../Context/FilterContext'; // Make sure path matches your project structure
+import { useFilter } from '../../../../Context/FilterContext'; // Make sure path matches your project structure
 
 // Using the same Course type from FilterContext
 interface Course {
@@ -62,12 +62,22 @@ export default function Related_product() {
 
     // Get the filter context
     const {
+        filteredProducts,
         allProducts,
         loading,
-        error
+        error,
+        setSelectedDifficulty
     } = useFilter();
 
-    // Using allProducts directly - no filtering
+    // Set the filter to "beginner" when component mounts
+    useEffect(() => {
+        setSelectedDifficulty("beginner");
+    }, [setSelectedDifficulty]);
+
+    // Filter only beginner category courses
+    const beginnerProducts = allProducts.filter(
+        (product: Course) => product.category.toLowerCase() === 'beginner'
+    );
 
     const sortOptions = [
         'Default sorting',
@@ -91,8 +101,8 @@ export default function Related_product() {
         return (
             <div className="min-h-screen bg-white px-6 md:px-16 py-10 text-[#1c2b36]">
                 <div className="max-w-6xl mx-auto">
-                    <p className="text-sm text-gray-500 mb-2">Home / All Products</p>
-                    <h1 className="text-4xl font-bold mb-8">All Products</h1>
+                    <p className="text-sm text-gray-500 mb-2">Home / Beginner</p>
+                    <h1 className="text-4xl font-bold mb-8">Beginner</h1>
                     <div className="flex justify-center items-center h-64">
                         <p className="text-lg">Loading courses...</p>
                     </div>
@@ -106,8 +116,8 @@ export default function Related_product() {
         return (
             <div className="min-h-screen bg-white px-6 md:px-16 py-10 text-[#1c2b36]">
                 <div className="max-w-6xl mx-auto">
-                    <p className="text-sm text-gray-500 mb-2">Home / All Products</p>
-                    <h1 className="text-4xl font-bold mb-8">All Products</h1>
+                    <p className="text-sm text-gray-500 mb-2">Home / Beginner</p>
+                    <h1 className="text-4xl font-bold mb-8">Beginner</h1>
                     <div className="flex justify-center items-center h-64">
                         <p className="text-lg text-red-500">{error}</p>
                     </div>
@@ -119,13 +129,13 @@ export default function Related_product() {
     return (
         <div className="min-h-screen bg-white px-6 md:px-16 py-10 text-[#1c2b36]">
             <div className="max-w-6xl mx-auto">
-                <p className="text-sm text-gray-500 mb-2">Home / All Products</p>
-                <h1 className="text-4xl font-bold mb-8">All Products</h1>
+                <p className="text-sm text-gray-500 mb-2">Home / Beginner</p>
+                <h1 className="text-4xl font-bold mb-8">Beginner</h1>
 
                 <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
                     <div className="flex items-center space-x-2 text-gray-500">
                         <SearchCheck className="text-blue-600 w-5 h-5" />
-                        <span>Showing {allProducts.length} results</span>
+                        <span>Showing {beginnerProducts.length} results</span>
                     </div>
 
                     <div className="relative">
@@ -156,7 +166,7 @@ export default function Related_product() {
 
                 {/* Product Cards */}
                 <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-10">
-                    {allProducts.map((product: Course, index: number) => (
+                    {beginnerProducts.map((product: Course, index: number) => (
                         <div key={product._id} className="text-center">
                             <div className="bg-white rounded overflow-hidden shadow-md">
                                 <div className="relative w-full h-60">
@@ -170,10 +180,10 @@ export default function Related_product() {
                                     />
                                 </div>
                                 <div className="py-4 px-2">
-                                    <p className="text-sm text-gray-500 mb-1">{product.category}</p>
+                                    <p className="text-sm text-gray-500 mb-1">Beginner</p>
                                     <h3 className="text-base font-medium mb-1">{product.title}</h3>
                                     <div className="flex justify-center mb-1">
-                                        {/* Standard 5-star rating */}
+                                        {/* If you have a rating field, use it here */}
                                         {Array.from({ length: 5 }).map((_, i) => (
                                             <svg key={i} className="w-4 h-4 fill-current text-yellow-400" viewBox="0 0 20 20">
                                                 <path d="M10 15l-5.878 3.09 1.122-6.545L.489 6.91l6.567-.955L10 0l2.944 5.955 6.567.955-4.755 4.635 1.122 6.545z" />
@@ -181,17 +191,15 @@ export default function Related_product() {
                                         ))}
                                     </div>
                                     <p className="text-base font-semibold text-[#1c2b36] mb-4">{product.prices}</p>
-                                    <button
-                                        onClick={() => {
-                                            if (product) {
-                                                // Store the entire course object in localStorage
-                                                localStorage.setItem('selectedCourse', JSON.stringify(product));
+                                    <button onClick={() => {
+                                        if (product) {
+                                            // Store the entire course object in localStorage
+                                            localStorage.setItem('selectedCourse', JSON.stringify(product));
 
-                                                // Redirect to product page
-                                                window.location.href = '/product';
-                                            }
-                                        }}
-                                        className="cursor-pointer bg-yellow-400 hover:bg-yellow-300 transition font-semibold py-2 px-6 rounded-full text-[#1c2b36]">
+                                            // Redirect to product page
+                                            window.location.href = '/product';
+                                        }
+                                    }} className="bg-yellow-400 hover:bg-yellow-300 transition font-semibold py-2 px-6 rounded-full text-[#1c2b36]">
                                         Select options
                                     </button>
                                 </div>
@@ -201,9 +209,9 @@ export default function Related_product() {
                 </div>
 
                 {/* Show message if no products found */}
-                {allProducts.length === 0 && (
+                {beginnerProducts.length === 0 && (
                     <div className="mt-12 flex justify-center">
-                        <p className="text-lg text-gray-600">No products found.</p>
+                        <p className="text-lg text-gray-600">No Beginner courses found.</p>
                     </div>
                 )}
             </div>

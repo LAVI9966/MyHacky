@@ -15,14 +15,15 @@ const Checkout: React.FC = () => {
   );
 
   const total = subtotal;
-
+  console.log(cart);
+  console.log(total);
   const handlePlaceOrder = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!fullName || !email) {
       alert("Please fill in all required fields.");
       return;
     }
-   
+
     const orderPayload = {
       fullName,
       email,
@@ -219,11 +220,10 @@ const Checkout: React.FC = () => {
             <button
               onClick={handlePlaceOrder}
               disabled={cart.length === 0}
-              className={`w-full ${
-                cart.length === 0
-                  ? "bg-gray-400 cursor-not-allowed"
-                  : "bg-[#00008B] hover:bg-[#000070]"
-              } text-white py-3 px-4 rounded-full transition-colors text-lg font-semibold`}
+              className={`w-full ${cart.length === 0
+                ? "bg-gray-400 cursor-not-allowed"
+                : "bg-[#00008B] hover:bg-[#000070]"
+                } text-white py-3 px-4 rounded-full transition-colors text-lg font-semibold`}
             >
               Place order
             </button>
@@ -251,7 +251,7 @@ const Checkout: React.FC = () => {
                 >
                   <div className="flex flex-col gap-1 text-sm text-black">
                     <p className="font-medium">
-                      {item.title} × {item.quantity}
+                      {item.title} {`(${item.accessDays})`}  × {item.quantity}
                     </p>
                   </div>
                   <span className="text-sm font-medium text-black">
@@ -320,11 +320,10 @@ const Checkout: React.FC = () => {
             <button
               onClick={handlePlaceOrder}
               disabled={cart.length === 0}
-              className={`w-full ${
-                cart.length === 0
-                  ? "bg-gray-400 cursor-not-allowed"
-                  : "bg-[#00008B] hover:bg-[#000070]"
-              } text-white py-3 px-4 rounded-full transition-colors text-lg font-semibold`}
+              className={`w-full ${cart.length === 0
+                ? "bg-gray-400 cursor-not-allowed"
+                : "bg-[#00008B] hover:bg-[#000070]"
+                } text-white py-3 px-4 rounded-full transition-colors text-lg font-semibold`}
             >
               Place order
             </button>

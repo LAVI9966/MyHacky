@@ -68,7 +68,7 @@ const CartContent = ({ onClose }: CartContentProps) => {
                             <div key={`${item.id}-${item.accessId}`} className="bg-white rounded shadow p-4 flex gap-4">
                                 <Image src={item.imageUrl || "/Assets/Shield.avif"} alt={item.title} width={60} height={60} className="rounded object-fit w-16 h-16" />
                                 <div className="flex-1">
-                                    <h3 className="font-semibold text-sm">{item.title}</h3>
+                                    <h3 className="font-semibold text-sm">{item.title} {`(${item.accessDays})`}</h3>
                                     {/* <p className="text-xs text-gray-500 italic">{item?.subtitle}</p> */}
                                     <p className="text-sm mt-1">{item.quantity} X</p>
                                     <p className="text-sm font-medium mt-1">Total bundle amount payable ₹{item.price.toFixed(2)}</p>

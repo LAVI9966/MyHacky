@@ -3,11 +3,13 @@ import React, { useState } from "react";
 import Beginner from "./Beginner";
 import Intermediate from "./Intermediate";
 import Advanced from "./Advanced";
+import { useFilter } from "@/Context/FilterContext";
 const levels = ["BEGINNER", "INTERMEDIATE", "ADVANCED"];
 
 export default function LevelTabs() {
     const [activeTab, setActiveTab] = useState("BEGINNER");
-
+    const { filteredProducts } = useFilter();
+    console.log(filteredProducts)
     const renderContent = () => {
         switch (activeTab) {
             case "BEGINNER":
